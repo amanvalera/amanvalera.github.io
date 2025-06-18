@@ -17,8 +17,8 @@ To support myself and repay my educational loan, I currently work hourly at Pizz
 
 ### 🎓 Academic Foundation
 
-- **MSc in Data Science**, Heriot-Watt University — Specialized in ML systems, NLP, and sports analytics  
-- **BTech in Computer Engineering**, Mumbai University — Built a strong base in algorithms, software engineering, and statistical modeling
+- **MSc in Data Science**, Heriot-Watt University — Specialized in ML systems, statistical modeling, and sports analytics  
+- **BTech in Computer Engineering**, Mumbai University — Built a strong base in algorithms, software engineering, and database management
 
 ### 💼 Orange Business Services
 
@@ -39,7 +39,7 @@ To support myself and repay my educational loan, I currently work hourly at Pizz
 
 ### 🍕 Pizza Hut (Current)
 
-- Cross-trained in kitchen and front-of-house roles  
+- Cross-trained in back and front-of-house roles  
 - Gained valuable experience in communication, pressure handling, and team operations while self-funding my career transition
 
 ---
