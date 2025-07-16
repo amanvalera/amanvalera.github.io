@@ -7,9 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm Aman Valera. I hold a Master’s in Data Science from Heriot-Watt University and have experience in building data pipelines, dashboards, and machine learning models to solve practical problems. I have a growing interest in cricket analytics and how structured data can offer new perspectives on the game.
-
-To support myself and repay my educational loan, I currently work hourly at Pizza Hut while staying focused on projects, volunteering, and deepening my expertise. I’ve presented my work at university, contributed to charities through dashboard design, and aim to build solutions that are autonomous and genuinely useful.
+I'm a data scientist with a Master’s from Heriot-Watt University and over two years of experience in business intelligence and predictive modeling. I’ve built real-time machine learning models to forecast IPL match outcomes with up to 84% F1 score, using over 15 years of ball-by-ball data. My work combines domain expertise in cricket with advanced statistical techniques and end-to-end deployment on platforms like Streamlit and AWS. I'm now developing a next-gen cricket analytics platform focused on real-time intelligence for betting and performance — and I’m looking to connect with others passionate about pushing the boundaries of sports data.
 
 ---
 
@@ -27,20 +25,21 @@ To support myself and repay my educational loan, I currently work hourly at Pizz
 - Built DirectQuery-enabled Power BI dashboards to simulate workforce scenarios in real time  
 - Created data models to identify customer trends and drive revenue decisions  
 
-**Role**: Graduate Engineer Trainee  
+**Role**: Data Analyst
 - Automated weekly billable hours reporting using SQL and Power BI, saving 90% of manual effort  
 - Managed Monthly Business Review KPIs and ensured data accuracy across live dashboards  
 - Provided documentation and operational support for ad-hoc and recurring tasks
 
 ### 🌍 Scottish Tech Army (Current)
 
+**Role**: Data Analyst
 - Developed dashboards in Looker Studio with secure access control  
 - Helped The Fore and other charities visualize and analyze live survey data at scale
 
 ### 🍕 Pizza Hut (Current)
 
 - Cross-trained in back and front-of-house roles  
-- Gained valuable experience in communication, pressure handling, and team operations while self-funding my career transition
+- Gained valuable experience in communication, pressure handling, and team operations while self-funding my career
 
 ---
 
