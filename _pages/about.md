@@ -1,5 +1,6 @@
 ---
 permalink: /
+title: "Aman Valera – Data Scientist & AI Innovator"
 layout: single
 classes: wide
 author_profile: true
