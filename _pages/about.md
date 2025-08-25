@@ -3,63 +3,62 @@ permalink: /
 title: "Aman Valera – Data Scientist & AI Innovator"
 layout: single
 classes: wide
-author_profile: true      # keep the sidebar
+author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
 <style>
-/* ===== minimal tweaks for academicpages/minimal-mistakes ===== */
-:root { --masthead-h: 64px; }             /* adjust if your top bar is taller */
+:root{ --masthead-h:64px; }
 
-/* hide the big auto title block, keep sidebar + footer */
-.page__inner-wrap > header { display:none !important; }
+.page__inner-wrap>header{ display:none !important; } /* hide big auto title */
+.page__content{ padding:0; }
 
-/* let sections fill the viewport width */
-.page__content { padding:0; }
-
-/* BODY scroll-snap (no inner scroller) */
-html, body { height:100%; }
-body {
+html,body{ height:100%; }
+body{
   background:#222; color:#f5f5f5;
   scroll-snap-type:y mandatory;
-  scroll-padding-top: var(--masthead-h);   /* anchor jumps land below masthead */
+  scroll-padding-top:var(--masthead-h);
   overscroll-behavior-y:contain;
 }
 
-/* only sections inside #snap-stack are snap targets */
-#snap-stack > section {
-  min-height: calc(100svh - var(--masthead-h));
-  min-height: calc(100vh - var(--masthead-h));
+/* Only these sections snap */
+#snap-stack>section{
+  min-height:calc(100svh - var(--masthead-h));
+  min-height:calc(100vh - var(--masthead-h));
   scroll-snap-align:start;
-  scroll-snap-stop:always;                 /* “one at a time” feel */
+  scroll-snap-stop:always;
   display:flex; align-items:center;
 }
+.page__footer{ scroll-snap-align:none; }     /* footer won't snap */
 
-/* footer should not snap */
-.page__footer { scroll-snap-align:none; }
+.wrap{ max-width:1100px; margin:0 auto; padding:6rem 2rem; }
+h1{ font-size:clamp(2.6rem,6vw,5rem); line-height:1.05; margin:0 0 1rem; }
+h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; }
+.lead{ font-size:clamp(1.1rem,2vw,1.35rem); color:#bdbdbd; max-width:60ch; }
 
-/* simple layout/type */
-.wrap { max-width:1100px; margin:0 auto; padding:6rem 2rem; }
-h1 { font-size:clamp(2.6rem,6vw,5rem); line-height:1.05; margin:0 0 1rem; }
-h2 { font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; }
-.lead { font-size:clamp(1.1rem,2vw,1.35rem); color:#bdbdbd; max-width:60ch; }
-.grid { display:grid; gap:1.1rem; }
-.grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-@media (max-width:900px){ .grid-3 { grid-template-columns:1fr; } }
-.card { background:#2b2b2b; border-radius:20px; padding:1.25rem 1.4rem; box-shadow:0 10px 30px rgba(0,0,0,.25); }
-.cta { display:inline-block; padding:.9rem 1.15rem; border-radius:12px; font-weight:700; text-decoration:none; }
-.cta-primary { background:#9b87f5; color:#0e0a21; }
-.cta-ghost { border:1px solid #444; color:#f5f5f5; margin-left:.5rem; }
-.underline { box-shadow:inset 0 -.5em rgba(155,135,245,.25); display:inline; }
+.grid{ display:grid; gap:1.1rem; }
+.grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media (max-width:900px){ .grid-3{ grid-template-columns:1fr; } }
+
+.card{ background:#2b2b2b; border-radius:20px; padding:1.25rem 1.4rem; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+.cta{ display:inline-block; padding:.9rem 1.15rem; border-radius:12px; font-weight:700; text-decoration:none; }
+.cta-primary{ background:#9b87f5; color:#0e0a21; }
+.cta-ghost{ border:1px solid #444; color:#f5f5f5; margin-left:.5rem; }
+.underline{ box-shadow:inset 0 -.5em rgba(155,135,245,.25); display:inline; }
+
+/* gradients */
+.s1{ background:radial-gradient(1200px 600px at 75% 20%, #2c2655 0%, transparent 60%) #222; }
+.s2{ background:radial-gradient(1200px 600px at 20% 10%, #253b59 0%, transparent 60%) #222; }
+.s3{ background:radial-gradient(1200px 600px at 80% 80%, #2c4c3b 0%, transparent 60%) #222; }
+.s4{ background:radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) #222; }
 </style>
 
-<!-- Everything in here snaps; footer comes after this div -->
 <div id="snap-stack" markdown="0">
 
   <!-- HERO -->
-  <section id="hero">
+  <section class="s1" id="hero">
     <div class="wrap">
       <h1>Reimagining the future through the language of data.</h1>
       <h2>I don’t just analyze it — I transform it into insight.</h2>
@@ -71,7 +70,7 @@ h2 { font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0;
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
+  <section class="s2" id="services">
     <div class="wrap">
       <h1>What I deliver.</h1>
       <div class="grid grid-3" style="margin-top:1.1rem;">
@@ -92,7 +91,7 @@ h2 { font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0;
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section class="s3" id="about">
     <div class="wrap">
       <h1>I’m a Data Scientist &amp; Machine Learning Engineer.</h1>
       <p class="lead">Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
@@ -100,7 +99,7 @@ h2 { font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0;
   </section>
 
   <!-- IMPACT -->
-  <section id="impact">
+  <section class="s4" id="impact">
     <div class="wrap">
       <h1>End-to-end systems that ship.</h1>
       <p class="lead">
@@ -111,15 +110,6 @@ h2 { font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0;
         <a class="cta cta-primary" href="/projects/">View Projects</a>
         <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
       </div>
-    </div>
-  </section>
-
-  <!-- FOCUS (optional—kept since you wrote it) -->
-  <section id="focus">
-    <div class="wrap">
-      <h1>Focus</h1>
-      <p class="lead"><strong>Practical impact today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
-      <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
     </div>
   </section>
 
