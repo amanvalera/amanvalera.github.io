@@ -13,10 +13,14 @@ h1.page__title,
 header.page__header { display: none !important; }
 
 /* Remove container restrictions */
-.page__content, .page__inner-wrap {
+/* Force container to full width, no padding/margin */
+.page__inner-wrap,
+.page__content {
+  width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
+  box-sizing: border-box;
 }
 
 /* Override theme .page layout on desktop */
@@ -24,11 +28,11 @@ header.page__header { display: none !important; }
   .page {
     width: 100% !important;
     float: none !important;
-    margin-right: 0 !important;
-    padding-right: 0 !important;
-    padding-left: var(--gutter, 2rem) !important; /* keep left breathing room */
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
+
   
 /* Snap scroll container */
 .snap-container {
