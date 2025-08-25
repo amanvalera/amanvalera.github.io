@@ -7,7 +7,7 @@ author_profile: true
 ---
 
 <style>
-/* Hide page title (kept for SEO) */
+/* Hide page title (SEO only) */
 .page-title,
 h1.page__title,
 header.page__header { display: none !important; }
@@ -18,23 +18,25 @@ header.page__header { display: none !important; }
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
-  margin: 0; 
-  padding: 0;
 }
 
-/* Each section */
+/* Each section takes full height */
 .snap-section {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
-  padding: 0; /* let inner container handle spacing */
+  padding: 0;
   box-sizing: border-box;
+  /* Offset so text doesn’t go under sidebar */
+  margin-left: 300px; /* adjust this to your actual sidebar width */
 }
 
-/* Content wrapper: respects theme’s column width */
+/* Content wrapper = gradient + padding */
 .content-wrap {
   max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   padding: 4rem 2rem;
   border-radius: 16px;
@@ -62,14 +64,18 @@ header.page__header { display: none !important; }
 .content-wrap ul { list-style: none; padding-left: 0; }
 .content-wrap li { margin: .75rem 0; }
 
-/* Gradient backgrounds only on container */
+/* Gradient backgrounds inside container */
 .hero    .content-wrap { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
 .services .content-wrap{ background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
 .about   .content-wrap{ background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
 .impact  .content-wrap{ background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
-.focus   .content-wrap{ background: #111; }
-</style>
+.focus   .content-wrap{ background: #111; } /* solid dark for focus */
 
+/* Mobile fix: don’t push on narrow screens */
+@media (max-width: 900px) {
+  .snap-section { margin-left: 0; }
+}
+</style>
 
 <div class="snap-container">
 
