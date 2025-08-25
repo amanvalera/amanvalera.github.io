@@ -13,6 +13,21 @@ h1.page__title,
 header.page__header {
   display: none !important;
 }
+
+.page__content h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.about-section {
+  background: radial-gradient(1200px 600px at 80% 50%, #2c4c3b 0%, transparent 70%) #222;
+  color: #f5f5f5;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+}
+.about-section h1 {
+  margin-top: 0;
+}
+
 </style>
 
 # Reimagining the future through the language of data.
