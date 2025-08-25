@@ -16,7 +16,11 @@ redirect_from:
 }
 .page, .page__inner-wrap{ background:var(--bg); color:var(--fg); }
 .page__content{ padding:0; }
-.page-title{ display:none; } /* hide default title */
+.page-title, 
+h1.page__title, 
+header.page__header {
+  display: none !important;
+}
 
 .snap{ height:100vh; overflow-y:auto; scroll-snap-type:y mandatory; overscroll-behavior-y:contain; }
 .section{ min-height:100vh; scroll-snap-align:start; display:flex; align-items:center; }
