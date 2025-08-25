@@ -13,7 +13,6 @@ h1.page__title,
 header.page__header { display: none !important; }
 
 /* Remove container restrictions */
-/* Force container to full width, no padding/margin */
 .page__inner-wrap,
 .page__content {
   width: 100% !important;
@@ -22,9 +21,7 @@ header.page__header { display: none !important; }
   padding: 0 !important;
   box-sizing: border-box;
 }
-.sidebar {
-  left: 2em;         /* adjust as needed, '2rem' ~ 32px */
-}
+
 #main {
   margin: 0 !important;
   padding: 0 !important;
@@ -32,7 +29,12 @@ header.page__header { display: none !important; }
   max-width: 100% !important;
   box-sizing: border-box;
 }
-  
+
+/* Sidebar offset */
+.sidebar {
+  left: 2em;
+}
+
 /* Override theme .page layout on desktop */
 @media (min-width: 57.8125em) {
   .page {
@@ -43,7 +45,6 @@ header.page__header { display: none !important; }
   }
 }
 
-  
 /* Snap scroll container */
 .snap-container {
   height: 100vh;
@@ -63,7 +64,7 @@ header.page__header { display: none !important; }
   scroll-snap-align: start;
   box-sizing: border-box;
 
-  /* sidebar awareness */
+  /* sidebar awareness on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
 
@@ -73,7 +74,9 @@ header.page__header { display: none !important; }
 /* Inner content */
 .content-wrap {
   max-width: 65ch;
-  margin: 0 auto;
+  margin: 0; /* no forced centering */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Typography */
@@ -102,6 +105,19 @@ header.page__header { display: none !important; }
 .about    { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
 .impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus    { background: #111; }
+
+/* Mobile-friendly layout */
+@media (max-width: 768px) {
+  .snap-section {
+    padding-left: var(--gutter, 1rem);
+    padding-right: var(--gutter, 1rem);
+  }
+  .content-wrap {
+    max-width: 100%;
+    padding-left: var(--gutter, 1rem);
+    padding-right: var(--gutter, 1rem);
+  }
+}
 </style>
 
 <div class="snap-container">
