@@ -1,72 +1,71 @@
 ---
 permalink: /
-title: "Aman Valera – Data Scientist & AI Innovator"  # keep for SEO/tab
+title: "Aman Valera – Data Scientist & AI Innovator"
 layout: single
 classes: wide
-author_profile: false          # hide author panel on home
-sidebar: false                 # hide nav/sidebar on home
+author_profile: true      # keep sidebar
+sidebar: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
 <style>
-/* ========== kill theme chrome just on this page ========== */
-.page__inner-wrap > header,
-.page__title,
-.page__meta,
-.sidebar,                      /* left column (author/sitemap) */
-.page__footer { display:none !important; }   /* removes “Sitemap … Powered by …” */
-
-/* remove default padding so sections can fill the viewport */
-.page__content{ padding:0; }
-
-/* ========== BODY-LEVEL SCROLL SNAP ========== */
-html{ height:100%; scroll-behavior:smooth; }
-body{
+/* ===== BODY-LEVEL SCROLL SNAP (keep theme chrome) ===== */
+:root { --masthead-h: 64px; }                 /* adjust if your top bar is taller */
+html { height:100%; scroll-behavior:smooth; }
+body {
   height:100%;
+  scroll-snap-type:y mandatory;               /* snap on the body */
+  scroll-padding-top: var(--masthead-h);      /* anchors land below the masthead */
   background:#222; color:#f5f5f5;
-  scroll-snap-type:y mandatory;    /* snap on the BODY */
-  overscroll-behavior-y:contain;
-  scroll-padding-top:72px;         /* helps when jumping to #anchors under sticky header */
 }
 
-/* sections */
-.section{
-  min-height:100svh;               /* mobile-friendly viewport height */
-  min-height:100vh;
-  scroll-snap-align:start;
+/* Make each content section fill the visible space under the fixed masthead */
+.page__content > .snap-section {
+  min-height: calc(100svh - var(--masthead-h));
+  min-height: calc(100vh - var(--masthead-h));
+  scroll-snap-align: start;
+  scroll-snap-stop: always;                   /* prevents skipping multiple sections */
   display:flex; align-items:center;
 }
-.wrap{ width:100%; max-width:1100px; margin:0 auto; padding:6rem 2rem; }
 
-/* type */
+/* Optional: hide the big auto page title; comment this out if you want it visible */
+.page__inner-wrap > header,
+.page__title,
+.page__meta { display:none !important; }
+
+/* Spacing so sections can touch edges */
+.page__content { padding:0; }
+
+/* Typography */
 h1{ font-size:clamp(2.6rem,6vw,5rem); line-height:1.05; margin:0 0 1rem; }
 h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; }
 .lead{ font-size:clamp(1.1rem,2vw,1.35rem); color:#bdbdbd; max-width:60ch; }
 
-/* cards / grid */
+/* Cards / grid */
 .card{ background:#2b2b2b; border-radius:20px; padding:1.25rem 1.4rem; box-shadow:0 10px 30px rgba(0,0,0,.25); }
 .grid{ display:grid; gap:1.1rem; }
 .grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 @media (max-width: 900px){ .grid-3{ grid-template-columns:1fr; } }
 
-/* buttons */
+/* Buttons */
 .cta{ display:inline-block; padding:.9rem 1.15rem; border-radius:12px; font-weight:700; text-decoration:none; }
 .cta-primary{ background:#9b87f5; color:#0e0a21; }
 .cta-ghost{ border:1px solid #444; color:#f5f5f5; margin-left:.5rem; }
 
-/* subtle gradients per section (optional) */
+/* Subtle gradients per section (optional) */
 .s1{ background: radial-gradient(1200px 600px at 75% 20%, #2c2655 0%, transparent 60%) #222; }
 .s2{ background: radial-gradient(1200px 600px at 20% 10%, #253b59 0%, transparent 60%) #222; }
 .s3{ background: radial-gradient(1200px 600px at 80% 80%, #2c4c3b 0%, transparent 60%) #222; }
 .s4{ background: radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) #222; }
 
 .underline{ box-shadow: inset 0 -0.5em rgba(155,135,245,.25); display:inline; }
+.wrap{ width:100%; max-width:1100px; margin:0 auto; padding:6rem 2rem; }
 </style>
 
 <!-- HERO -->
-<section class="section s1" id="hero">
+<section class="snap-section s1" id="hero">
   <div class="wrap">
     <h1>Reimagining the future through the language of data.</h1>
     <h2>I don’t just analyze it — I transform it into insight.</h2>
@@ -78,7 +77,7 @@ h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; 
 </section>
 
 <!-- SERVICES -->
-<section class="section s2" id="services">
+<section class="snap-section s2" id="services">
   <div class="wrap">
     <h1>What I deliver.</h1>
     <div class="grid grid-3" style="margin-top:1.1rem;">
@@ -99,7 +98,7 @@ h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; 
 </section>
 
 <!-- ABOUT -->
-<section class="section s3" id="about">
+<section class="snap-section s3" id="about">
   <div class="wrap">
     <h1>I’m a Data Scientist &amp; Machine Learning Engineer.</h1>
     <p class="lead">Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
@@ -107,7 +106,7 @@ h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; 
 </section>
 
 <!-- IMPACT -->
-<section class="section s4" id="impact">
+<section class="snap-section s4" id="impact">
   <div class="wrap">
     <h1>End-to-end systems that ship.</h1>
     <p class="lead">
@@ -120,7 +119,6 @@ h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; 
     </div>
   </div>
 </section>
-
 
 
 I focus on two things:  
