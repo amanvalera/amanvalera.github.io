@@ -8,76 +8,61 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
 <style>
-:root{
-  --bg:#222; --fg:#f5f5f5; --muted:#bdbdbd; --accent:#9b87f5; --card:#2b2b2b;
+:root {
+  --bg:#222; 
+  --fg:#f5f5f5; 
+  --muted:#bdbdbd; 
+  --accent:#9b87f5; 
+  --card:#2b2b2b;
   --maxw:1100px;
 }
 
-/* Remove container look completely */
-.page, .page__inner-wrap, .page__content {
+/* Remove theme's "page shell" */
+.page,
+.page__inner-wrap,
+.page__content {
   background: none !important;
   box-shadow: none !important;
   border: none !important;
-  max-width: 100% !important;
-  width: 100% !important;
   padding: 0 !important;
   margin: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
   color: var(--fg);
 }
 
-/* Hide default injected page title */
+/* Hide theme's default title */
 .page-title, 
 h1.page__title, 
 header.page__header {
   display: none !important;
 }
 
-/* Snap sections full screen */
-.snap { height:100vh; overflow-y:auto; scroll-snap-type:y mandatory; overscroll-behavior-y:contain; }
-.section { min-height:100vh; width:100vw; scroll-snap-align:start; display:flex; align-items:center; }
-
-/* Respect sidebar space */
-.wrap {
-  width: 100%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 6rem 2rem;
+/* Ensure nav inherits section bg */
+.masthead, 
+.masthead__inner-wrap, 
+.masthead__menu {
+  background: transparent !important;
+  box-shadow: none !important;
+  position: absolute; 
+  width: 100%; 
+  z-index: 10;
 }
 
-@media (min-width: 1000px) {
-  .wrap {
-    margin-left: 300px; /* match your sidebar width */
-  }
+/* Full-bleed snap container */
+.snap {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
 }
 
-h1{ font-size: clamp(2.6rem, 6vw, 5rem); line-height:1.05; margin:0 0 1rem 0; }
-h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; margin:0 0 .25rem 0;}
-.lead{ font-size: clamp(1.1rem, 2vw, 1.35rem); color:var(--muted); max-width: 60ch; }
-.kicker{ letter-spacing:.18em; text-transform:uppercase; font-size:.82rem; color:var(--muted); margin-bottom:.5rem; }
-
-/* Cards + grids */
-.card{ background:var(--card); border-radius:20px; padding:1.25rem 1.4rem; box-shadow:0 10px 30px rgba(0,0,0,.25); }
-.grid{ display:grid; gap:1.1rem; }
-.grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-@media (max-width: 900px){ .grid-3{ grid-template-columns:1fr; } }
-
-/* Pills + CTAs */
-.pill{ display:inline-block; background:#363636; color:#eaeaea; border-radius:999px; padding:.45rem .9rem; margin:.25rem .35rem .35rem 0; font-size:.95rem; }
-.cta{ display:inline-block; padding:.9rem 1.15rem; border-radius:12px; font-weight:700; text-decoration:none; }
-.cta-primary{ background:var(--accent); color:#0e0a21; }
-.cta-ghost{ border:1px solid #444; color:var(--fg); margin-left:.5rem; }
-
-/* Section backgrounds */
-.s1{ background: radial-gradient(1200px 600px at 75% 20%, #2c2655 0%, transparent 60%) var(--bg); }
-.s2{ background: radial-gradient(1200px 600px at 20% 10%, #253b59 0%, transparent 60%) var(--bg); }
-.s3{ background: radial-gradient(1200px 600px at 80% 80%, #2c4c3b 0%, transparent 60%) var(--bg); }
-.s4{ background: radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) var(--bg); }
-
-/* Focus section (solid black) */
-#focus.section {
-  background: var(--bg);
+/* Fullscreen sections */
+.section {
   min-height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
@@ -85,14 +70,99 @@ h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; ma
   align-items: center;
 }
 
-.underline{ box-shadow: inset 0 -0.5em rgba(155,135,245,.25); display:inline; }
-
-/* On mobile, sidebar stacks */
-@media (max-width: 768px) {
-  .sidebar { order: -1; }
-  .wrap { margin-left: 0 !important; }
+/* Content wrapper */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 6rem 2rem;
 }
 
+/* Offset for sidebar on desktop */
+@media (min-width: 1000px) {
+  .wrap {
+    margin-left: 300px; /* match sidebar width */
+  }
+}
+
+/* Reset offset on mobile */
+@media (max-width: 768px) {
+  .wrap {
+    margin-left: 0 !important;
+  }
+}
+
+/* Typography */
+h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height:1.05;
+  margin:0 0 1rem 0;
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color:var(--muted);
+  font-weight:600;
+  margin:0 0 .25rem 0;
+}
+.lead {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color:var(--muted);
+  max-width: 60ch;
+}
+.kicker {
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.82rem;
+  color:var(--muted);
+  margin-bottom:.5rem;
+}
+
+/* Cards + grid */
+.card {
+  background:var(--card);
+  border-radius:20px;
+  padding:1.25rem 1.4rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.grid { display:grid; gap:1.1rem; }
+.grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media (max-width: 900px){ .grid-3{ grid-template-columns:1fr; } }
+
+/* Pills + CTAs */
+.pill {
+  display:inline-block;
+  background:#363636;
+  color:#eaeaea;
+  border-radius:999px;
+  padding:.45rem .9rem;
+  margin:.25rem .35rem .35rem 0;
+  font-size:.95rem;
+}
+.cta {
+  display:inline-block;
+  padding:.9rem 1.15rem;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+}
+.cta-primary { background:var(--accent); color:#0e0a21; }
+.cta-ghost { border:1px solid #444; color:var(--fg); margin-left:.5rem; }
+
+/* Section backgrounds */
+.s1 { background: radial-gradient(1200px 600px at 75% 20%, #2c2655 0%, transparent 60%) var(--bg); }
+.s2 { background: radial-gradient(1200px 600px at 20% 10%, #253b59 0%, transparent 60%) var(--bg); }
+.s3 { background: radial-gradient(1200px 600px at 80% 80%, #2c4c3b 0%, transparent 60%) var(--bg); }
+.s4 { background: radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) var(--bg); }
+.s5 { background: radial-gradient(1200px 600px at 50% 50%, #000 0%, transparent 70%) var(--bg); }
+.footer-section { background: #111; color: var(--muted); text-align: center; }
+
+/* Footer section as a snap */
+.footer-section.section {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
 
 <div class="snap">
@@ -163,11 +233,19 @@ h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; ma
   </section>
 
   <!-- FOCUS -->
-  <section id="focus">
+  <section class="section s5" id="focus">
     <div class="wrap">
-      <h1>Focus</h1>
+      <div class="kicker">Focus</div>
+      <h1>Practical impact today. Exploring tomorrow.</h1>
       <p class="lead"><strong>Practical impact today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
       <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer-section section" id="footer">
+    <div class="wrap" style="text-align:center;">
+      <p>&copy; 2025 Aman Valera — Built with ❤️ and data.</p>
     </div>
   </section>
 
