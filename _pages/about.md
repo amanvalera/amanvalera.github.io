@@ -23,6 +23,14 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
+#main {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+  
 /* Override theme .page layout on desktop */
 @media (min-width: 57.8125em) {
   .page {
