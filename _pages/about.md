@@ -45,17 +45,13 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Let body scroll everything */
+/* Body scrolls everything (sections + footer) */
 html, body {
   margin: 0;
   padding: 0;
-  height: auto;
+  height: 100%;
   overflow-y: auto;
-}
-
-/* Snap container affects only the sections */
-.snap-container {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; /* snap applies on body */
   overscroll-behavior-y: contain;
 }
 
@@ -139,7 +135,7 @@ html, body {
   }
 }
 
-/* Footer — original theme footer, normal scroll */
+/* Footer — original theme footer, normal scroll (no snap) */
 footer.site-footer {
   min-height: auto;
   scroll-snap-align: none;
