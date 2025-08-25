@@ -114,22 +114,22 @@ html, body {
 
 /* Mobile-friendly layout */
 @media (max-width: 768px) {
-  /* Sticky sidebar fix */
+  /* Sidebar sticky under masthead (dynamic) */
   .sidebar.sticky {
     position: sticky !important;
-    top: 4rem; /* adjust depending on navbar height */
+    top: var(--masthead-height, 0px); /* dynamically uses nav height */
     left: 0 !important;
     width: 100% !important;
     margin: 0;
     padding: 1rem;
     background: #111;   /* optional for contrast */
     z-index: 1000;      /* keep above content */
-    border-radius: 8px; /* optional for card look */
+    border-radius: 0;   /* flush with masthead */
   }
 
-  /* Ensure sections don't overlap sticky sidebar */
+  /* Ensure sections don't overlap sidebar */
   .snap-section {
-    padding-top: 6rem; /* creates breathing room below sidebar */
+    padding-top: calc(var(--masthead-height, 0px) + 1rem);
     padding-left: var(--gutter, 1rem) !important;
     padding-right: var(--gutter, 1rem) !important;
   }
@@ -149,7 +149,7 @@ footer.site-footer {
   align-items: center;
   justify-content: center;
   color: #f5f5f5;
-  background: #111; /* keep consistent look */
+  background: #111; /* consistent */
 }
 </style>
 
