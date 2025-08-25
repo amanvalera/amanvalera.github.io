@@ -12,6 +12,12 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
+.page__content, .page__inner-wrap, .page {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /* Snap scroll container */
 .snap-container {
   height: 100vh;
