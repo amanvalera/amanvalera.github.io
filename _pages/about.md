@@ -12,10 +12,11 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
-.page__content, .page__inner-wrap, .page {
+/* Remove container restrictions */
+.page__content, .page__inner-wrap {
   max-width: 100% !important;
-  padding: 0 !important;
   margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Snap scroll container */
@@ -28,56 +29,55 @@ header.page__header { display: none !important; }
   padding: 0;
 }
 
-/* Each section */
+/* Each section takes full viewport */
 .snap-section {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
-  padding: 0;
   box-sizing: border-box;
+
+  /* sidebar awareness */
+  padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
+  padding-right: var(--gutter, 2rem);
+
+  color: #f5f5f5;
 }
 
-/* Gradient content box */
+/* Inner content */
 .content-wrap {
-  max-width: var(--content-width, 100%);
-  width: 100%;
+  max-width: 65ch;
   margin: 0 auto;
-  padding: var(--gutter, 2rem) 0 var(--gutter, 2rem) var(--gutter, 2rem);
-  border-radius: var(--radius, 12px);
-  color: var(--body-color, #f5f5f5);
 }
 
 /* Typography */
 .content-wrap h1 {
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 .content-wrap h2 {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: var(--muted-color, #ccc);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #ccc;
   margin-bottom: 2rem;
   font-weight: 400;
 }
-.content-wrap p,
-.content-wrap ul {
+.content-wrap p, .content-wrap ul {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--muted-color, #ddd);
-  max-width: 65ch;
+  color: #ddd;
 }
 .content-wrap ul { list-style: none; padding-left: 0; }
 .content-wrap li { margin: .75rem 0; }
 
-/* Gradients using theme background */
-.hero    .content-wrap { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) var(--background, #111); }
-.services .content-wrap{ background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) var(--background, #111); }
-.about   .content-wrap{ background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) var(--background, #111); }
-.impact  .content-wrap{ background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) var(--background, #111); }
-.focus   .content-wrap{ background: var(--background, #111); }
+/* Section gradients */
+.hero     { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
+.services { background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
+.about    { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
+.impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
+.focus    { background: #111; }
 </style>
-
 
 <div class="snap-container">
 
