@@ -15,9 +15,17 @@ redirect_from:
   --maxw:1100px;
 }
 
-/* Remove theme container restrictions */
-.page, .page__inner-wrap { background:var(--bg); color:var(--fg); }
-.page__content { padding:0; }
+/* Remove container look completely */
+.page, .page__inner-wrap, .page__content {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--fg);
+}
 
 /* Hide default injected page title */
 .page-title, 
@@ -26,53 +34,65 @@ header.page__header {
   display: none !important;
 }
 
-/* Make the snap container go full width */
-.page__content > .snap {
-  margin-left: calc(-1 * (100vw - 100%)/2);
-  margin-right: calc(-1 * (100vw - 100%)/2);
-  width: 100vw;
-  max-width: 100vw;
-}
-
-/* Sections full height + full width */
+/* Snap sections full screen */
 .snap { height:100vh; overflow-y:auto; scroll-snap-type:y mandatory; overscroll-behavior-y:contain; }
 .section { min-height:100vh; width:100vw; scroll-snap-align:start; display:flex; align-items:center; }
 
-/* Content wrapper stays centered */
-.wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:6rem 2rem; }
+/* Respect sidebar space */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+@media (min-width: 1000px) {
+  .wrap {
+    margin-left: 300px; /* match your sidebar width */
+  }
+}
 
 h1{ font-size: clamp(2.6rem, 6vw, 5rem); line-height:1.05; margin:0 0 1rem 0; }
 h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; margin:0 0 .25rem 0;}
 .lead{ font-size: clamp(1.1rem, 2vw, 1.35rem); color:var(--muted); max-width: 60ch; }
 .kicker{ letter-spacing:.18em; text-transform:uppercase; font-size:.82rem; color:var(--muted); margin-bottom:.5rem; }
 
+/* Cards + grids */
 .card{ background:var(--card); border-radius:20px; padding:1.25rem 1.4rem; box-shadow:0 10px 30px rgba(0,0,0,.25); }
 .grid{ display:grid; gap:1.1rem; }
 .grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 @media (max-width: 900px){ .grid-3{ grid-template-columns:1fr; } }
 
+/* Pills + CTAs */
 .pill{ display:inline-block; background:#363636; color:#eaeaea; border-radius:999px; padding:.45rem .9rem; margin:.25rem .35rem .35rem 0; font-size:.95rem; }
 .cta{ display:inline-block; padding:.9rem 1.15rem; border-radius:12px; font-weight:700; text-decoration:none; }
 .cta-primary{ background:var(--accent); color:#0e0a21; }
 .cta-ghost{ border:1px solid #444; color:var(--fg); margin-left:.5rem; }
 
+/* Section backgrounds */
 .s1{ background: radial-gradient(1200px 600px at 75% 20%, #2c2655 0%, transparent 60%) var(--bg); }
 .s2{ background: radial-gradient(1200px 600px at 20% 10%, #253b59 0%, transparent 60%) var(--bg); }
 .s3{ background: radial-gradient(1200px 600px at 80% 80%, #2c4c3b 0%, transparent 60%) var(--bg); }
 .s4{ background: radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) var(--bg); }
 
+/* Focus section (solid black) */
+#focus.section {
+  background: var(--bg);
+  min-height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+}
+
 .underline{ box-shadow: inset 0 -0.5em rgba(155,135,245,.25); display:inline; }
 
-/* Optional: On mobile, make sidebar stack */
+/* On mobile, sidebar stacks */
 @media (max-width: 768px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  .sidebar {
-    order: -1; /* sidebar goes on top */
-  }
+  .sidebar { order: -1; }
+  .wrap { margin-left: 0 !important; }
 }
+
 </style>
 
 <div class="snap">
