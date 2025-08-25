@@ -26,14 +26,13 @@ header.page__header { display: none !important; }
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   scroll-snap-align: start;
   padding: 0;
   box-sizing: border-box;
-  /* Offset so text doesn’t go under sidebar */
-  margin-left: 300px; /* adjust this to your actual sidebar width */
 }
 
-/* Content wrapper = gradient + padding */
+/* Content wrapper = column width + gradient */
 .content-wrap {
   max-width: 1000px;
   width: 100%;
@@ -45,18 +44,18 @@ header.page__header { display: none !important; }
 
 /* Typography */
 .content-wrap h1 {
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 .content-wrap h2 {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: #ccc;
   margin-bottom: 2rem;
   font-weight: 400;
 }
 .content-wrap p, .content-wrap ul {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: #ddd;
   max-width: 65ch;
@@ -70,11 +69,6 @@ header.page__header { display: none !important; }
 .about   .content-wrap{ background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
 .impact  .content-wrap{ background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus   .content-wrap{ background: #111; } /* solid dark for focus */
-
-/* Mobile fix: don’t push on narrow screens */
-@media (max-width: 900px) {
-  .snap-section { margin-left: 0; }
-}
 </style>
 
 <div class="snap-container">
