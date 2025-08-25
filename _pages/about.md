@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hi! I am Aman"
+title: "Aman Valera — a Data Scientist and AI Innovator"
 author_profile: true
 redirect_from: 
   - /about/
