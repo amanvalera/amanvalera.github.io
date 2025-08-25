@@ -1,6 +1,5 @@
 ---
 permalink: /
-title: "Aman Valera – Data Scientist & AI Innovator"
 layout: single
 classes: wide
 author_profile: true
@@ -14,17 +13,32 @@ redirect_from:
   --bg:#222; --fg:#f5f5f5; --muted:#bdbdbd; --accent:#9b87f5; --card:#2b2b2b;
   --maxw:1100px;
 }
-.page, .page__inner-wrap{ background:var(--bg); color:var(--fg); }
-.page__content{ padding:0; }
+
+/* Remove theme container restrictions */
+.page, .page__inner-wrap { background:var(--bg); color:var(--fg); }
+.page__content { padding:0; }
+
+/* Hide default injected page title */
 .page-title, 
 h1.page__title, 
 header.page__header {
   display: none !important;
 }
 
-.snap{ height:100vh; overflow-y:auto; scroll-snap-type:y mandatory; overscroll-behavior-y:contain; }
-.section{ min-height:100vh; scroll-snap-align:start; display:flex; align-items:center; }
-.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:6rem 2rem; }
+/* Make the snap container go full width */
+.page__content > .snap {
+  margin-left: calc(-1 * (100vw - 100%)/2);
+  margin-right: calc(-1 * (100vw - 100%)/2);
+  width: 100vw;
+  max-width: 100vw;
+}
+
+/* Sections full height + full width */
+.snap { height:100vh; overflow-y:auto; scroll-snap-type:y mandatory; overscroll-behavior-y:contain; }
+.section { min-height:100vh; width:100vw; scroll-snap-align:start; display:flex; align-items:center; }
+
+/* Content wrapper stays centered */
+.wrap { width:100%; max-width:var(--maxw); margin:0 auto; padding:6rem 2rem; }
 
 h1{ font-size: clamp(2.6rem, 6vw, 5rem); line-height:1.05; margin:0 0 1rem 0; }
 h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; margin:0 0 .25rem 0;}
@@ -47,6 +61,17 @@ h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; ma
 .s4{ background: radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) var(--bg); }
 
 .underline{ box-shadow: inset 0 -0.5em rgba(155,135,245,.25); display:inline; }
+
+/* Optional: On mobile, make sidebar stack */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar {
+    order: -1; /* sidebar goes on top */
+  }
+}
 </style>
 
 <div class="snap">
@@ -116,7 +141,7 @@ h2{ font-size: clamp(1.4rem, 3vw, 2rem); color:var(--muted); font-weight:600; ma
     </div>
   </section>
 
-  <!-- FOCUS (optional—kept since you wrote it) -->
+  <!-- FOCUS -->
   <section id="focus">
     <div class="wrap">
       <h1>Focus</h1>
