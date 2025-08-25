@@ -30,7 +30,7 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar offset */
+/* Sidebar offset (desktop) */
 .sidebar {
   left: 2em;
 }
@@ -114,15 +114,42 @@ html, body {
 
 /* Mobile-friendly layout */
 @media (max-width: 768px) {
-  .snap-section {
-    padding-left: var(--gutter, 1rem);
-    padding-right: var(--gutter, 1rem);
+  /* Sticky sidebar fix */
+  .sidebar.sticky {
+    position: sticky !important;
+    top: 4rem; /* adjust depending on navbar height */
+    left: 0 !important;
+    width: 100% !important;
+    margin: 0;
+    padding: 1rem;
+    background: #111;   /* optional for contrast */
+    z-index: 1000;      /* keep above content */
+    border-radius: 8px; /* optional for card look */
   }
+
+  /* Ensure sections don't overlap sticky sidebar */
+  .snap-section {
+    padding-top: 6rem; /* creates breathing room below sidebar */
+    padding-left: var(--gutter, 1rem) !important;
+    padding-right: var(--gutter, 1rem) !important;
+  }
+
   .content-wrap {
     max-width: 100%;
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
   }
+}
+
+/* Footer participates in snap */
+footer.site-footer {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  background: #111; /* keep consistent look */
 }
 </style>
 
