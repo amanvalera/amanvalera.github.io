@@ -7,7 +7,7 @@ author_profile: true
 ---
 
 <style>
-/* Hide page title (SEO only) */
+/* Hide page title (kept for SEO) */
 .page-title,
 h1.page__title,
 header.page__header { display: none !important; }
@@ -18,58 +18,60 @@ header.page__header { display: none !important; }
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
 }
 
-/* Each section takes full height */
+/* Each section */
 .snap-section {
   min-height: 100vh;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   scroll-snap-align: start;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Content wrapper = column width + gradient */
+/* Gradient content box */
 .content-wrap {
-  max-width: 1000px;
+  max-width: var(--content-width, 100%);
   width: 100%;
   margin: 0 auto;
-  padding: 4rem 2rem;
-  border-radius: 16px;
-  color: #f5f5f5;
+  padding: var(--gutter, 2rem) 0 var(--gutter, 2rem) var(--gutter, 2rem);
+  border-radius: var(--radius, 12px);
+  color: var(--body-color, #f5f5f5);
 }
 
 /* Typography */
 .content-wrap h1 {
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.5rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 .content-wrap h2 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  color: #ccc;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--muted-color, #ccc);
   margin-bottom: 2rem;
   font-weight: 400;
 }
-.content-wrap p, .content-wrap ul {
-  font-size: 1.05rem;
+.content-wrap p,
+.content-wrap ul {
+  font-size: 1rem;
   line-height: 1.6;
-  color: #ddd;
+  color: var(--muted-color, #ddd);
   max-width: 65ch;
 }
 .content-wrap ul { list-style: none; padding-left: 0; }
 .content-wrap li { margin: .75rem 0; }
 
-/* Gradient backgrounds inside container */
-.hero    .content-wrap { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
-.services .content-wrap{ background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
-.about   .content-wrap{ background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
-.impact  .content-wrap{ background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
-.focus   .content-wrap{ background: #111; } /* solid dark for focus */
+/* Gradients using theme background */
+.hero    .content-wrap { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) var(--background, #111); }
+.services .content-wrap{ background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) var(--background, #111); }
+.about   .content-wrap{ background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) var(--background, #111); }
+.impact  .content-wrap{ background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) var(--background, #111); }
+.focus   .content-wrap{ background: var(--background, #111); }
 </style>
+
 
 <div class="snap-container">
 
