@@ -3,40 +3,43 @@ permalink: /
 title: "Aman Valera – Data Scientist & AI Innovator"
 layout: single
 classes: wide
-author_profile: true      # keep sidebar
-sidebar: true
+author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
 <style>
-/* ===== BODY-LEVEL SCROLL SNAP (keep theme chrome) ===== */
-:root { --masthead-h: 64px; }                 /* adjust if your top bar is taller */
-html { height:100%; scroll-behavior:smooth; }
-body {
-  height:100%;
-  scroll-snap-type:y mandatory;               /* snap on the body */
-  scroll-padding-top: var(--masthead-h);      /* anchors land below the masthead */
-  background:#222; color:#f5f5f5;
-}
+:root { --masthead-h: 64px; }               /* adjust if your top bar is taller */
 
-/* Make each content section fill the visible space under the fixed masthead */
-.page__content > .snap-section {
-  min-height: calc(100svh - var(--masthead-h));
-  min-height: calc(100vh - var(--masthead-h));
-  scroll-snap-align: start;
-  scroll-snap-stop: always;                   /* prevents skipping multiple sections */
-  display:flex; align-items:center;
-}
-
-/* Optional: hide the big auto page title; comment this out if you want it visible */
+/* Keep theme chrome; just hide the auto page title if you like */
 .page__inner-wrap > header,
 .page__title,
 .page__meta { display:none !important; }
 
-/* Spacing so sections can touch edges */
-.page__content { padding:0; }
+.page__content{ padding:0; }
+
+/* BODY-LEVEL SCROLL SNAP */
+html, body { height:100%; }
+body{
+  background:#222; color:#f5f5f5;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--masthead-h);    /* anchors land below masthead */
+  overscroll-behavior-y: contain;
+}
+
+/* Sections (only those inside #snap-stack) */
+#snap-stack > section{
+  min-height: calc(100svh - var(--masthead-h));
+  min-height: calc(100vh - var(--masthead-h));
+  scroll-snap-align:start;
+  scroll-snap-stop: always;                 /* one-at-a-time feel */
+  display:flex; align-items:center;
+}
+.wrap{ width:100%; max-width:1100px; margin:0 auto; padding:6rem 2rem; }
+
+/* Footer should not participate in snapping */
+.page__footer{ scroll-snap-align: none; }
 
 /* Typography */
 h1{ font-size:clamp(2.6rem,6vw,5rem); line-height:1.05; margin:0 0 1rem; }
@@ -49,76 +52,81 @@ h2{ font-size:clamp(1.4rem,3vw,2rem); color:#bdbdbd; font-weight:600; margin:0; 
 .grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 @media (max-width: 900px){ .grid-3{ grid-template-columns:1fr; } }
 
-/* Buttons */
+/* CTA buttons */
 .cta{ display:inline-block; padding:.9rem 1.15rem; border-radius:12px; font-weight:700; text-decoration:none; }
 .cta-primary{ background:#9b87f5; color:#0e0a21; }
 .cta-ghost{ border:1px solid #444; color:#f5f5f5; margin-left:.5rem; }
 
-/* Subtle gradients per section (optional) */
+/* Section backgrounds */
 .s1{ background: radial-gradient(1200px 600px at 75% 20%, #2c2655 0%, transparent 60%) #222; }
 .s2{ background: radial-gradient(1200px 600px at 20% 10%, #253b59 0%, transparent 60%) #222; }
 .s3{ background: radial-gradient(1200px 600px at 80% 80%, #2c4c3b 0%, transparent 60%) #222; }
 .s4{ background: radial-gradient(1200px 600px at 20% 80%, #5a2f3b 0%, transparent 60%) #222; }
 
 .underline{ box-shadow: inset 0 -0.5em rgba(155,135,245,.25); display:inline; }
-.wrap{ width:100%; max-width:1100px; margin:0 auto; padding:6rem 2rem; }
 </style>
 
-<!-- HERO -->
-<section class="snap-section s1" id="hero">
-  <div class="wrap">
-    <h1>Reimagining the future through the language of data.</h1>
-    <h2>I don’t just analyze it — I transform it into insight.</h2>
-    <div style="margin-top:1.6rem;">
-      <a class="cta cta-primary" href="#services">See Services</a>
-      <a class="cta cta-ghost" href="#impact">See Results</a>
-    </div>
-  </div>
-</section>
+<!-- Keep everything inside this wrapper so the footer comes AFTER all sections -->
+<div id="snap-stack" markdown="0">
 
-<!-- SERVICES -->
-<section class="snap-section s2" id="services">
-  <div class="wrap">
-    <h1>What I deliver.</h1>
-    <div class="grid grid-3" style="margin-top:1.1rem;">
-      <div class="card">
-        <h2>Business Intelligence</h2>
-        <p class="lead">Dashboards, SQL data models, and secure pipelines that turn data into clear decisions. Power BI &amp; Looker Studio included.</p>
-      </div>
-      <div class="card">
-        <h2>Predictive Analytics</h2>
-        <p class="lead">End-to-end ML systems for forecasting and strategy — including live sports analytics (e.g., IPL win predictions).</p>
-      </div>
-      <div class="card">
-        <h2>Frontier AI Research</h2>
-        <p class="lead">Deep Learning, Biologically Inspired Computation, and Agentic AI — an innovation engine to keep solutions future-ready.</p>
+  <!-- HERO -->
+  <section class="section s1" id="hero">
+    <div class="wrap">
+      <h1>Reimagining the future through the language of data.</h1>
+      <h2>I don’t just analyze it — I transform it into insight.</h2>
+      <div style="margin-top:1.6rem;">
+        <a class="cta cta-primary" href="#services">See Services</a>
+        <a class="cta cta-ghost" href="#impact">See Results</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ABOUT -->
-<section class="snap-section s3" id="about">
-  <div class="wrap">
-    <h1>I’m a Data Scientist &amp; Machine Learning Engineer.</h1>
-    <p class="lead">Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section class="snap-section s4" id="impact">
-  <div class="wrap">
-    <h1>End-to-end systems that ship.</h1>
-    <p class="lead">
-      From SQL pipelines and dashboards to predictive ML models — including an
-      <span class="underline"><strong>84% F1</strong> in live IPL match predictions</span>.
-    </p>
-    <div style="margin-top:1.6rem;">
-      <a class="cta cta-primary" href="/projects/">View Projects</a>
-      <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
+  <!-- SERVICES -->
+  <section class="section s2" id="services">
+    <div class="wrap">
+      <h1>What I deliver.</h1>
+      <div class="grid grid-3" style="margin-top:1.1rem;">
+        <div class="card">
+          <h2>Business Intelligence</h2>
+          <p class="lead">Dashboards, SQL data models, and secure pipelines that turn data into clear decisions. Power BI &amp; Looker Studio included.</p>
+        </div>
+        <div class="card">
+          <h2>Predictive Analytics</h2>
+          <p class="lead">End-to-end ML systems for forecasting and strategy — including live sports analytics (e.g., IPL win predictions).</p>
+        </div>
+        <div class="card">
+          <h2>Frontier AI Research</h2>
+          <p class="lead">Deep Learning, Biologically Inspired Computation, and Agentic AI — an innovation engine to keep solutions future-ready.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section s3" id="about">
+    <div class="wrap">
+      <h1>I’m a Data Scientist &amp; Machine Learning Engineer.</h1>
+      <p class="lead">Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="section s4" id="impact">
+    <div class="wrap">
+      <h1>End-to-end systems that ship.</h1>
+      <p class="lead">
+        From SQL pipelines and dashboards to predictive ML models — including an
+        <span class="underline"><strong>84% F1</strong> in live IPL match predictions</span>.
+      </p>
+      <div style="margin-top:1.6rem;">
+        <a class="cta cta-primary" href="/projects/">View Projects</a>
+        <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
 
 
 I focus on two things:  
