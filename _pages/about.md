@@ -1,24 +1,42 @@
 ---
 permalink: /
 title: "Aman Valera – Data Scientist & AI Innovator"
+layout: single
+classes: wide
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
-I’m a Data Scientist and Machine Learning Engineer with expertise in **sports analytics** and **business intelligence**.  
+<style>
+/* Hide visible page title */
+.page-title,
+h1.page__title,
+header.page__header {
+  display: none !important;
+}
+</style>
 
-### What I Do
-- **Business Intelligence**: Dashboards, SQL pipelines, and reporting systems (Power BI, Looker Studio).  
-- **Predictive Analytics**: End-to-end ML solutions for forecasting, strategy, and sports (e.g., IPL win prediction).  
-- **Frontier AI Research**: Exploring deep learning, agent-based AI, and biologically inspired computation.  
+# Reimagining the future through the language of data.
+## I don’t just analyze it — I transform it into insight.
 
-### Impact
-Delivered **end-to-end systems** that connect raw data to business impact — from SQL pipelines to predictive ML models, including an **84% F1 score** in live IPL match predictions.  
+---
 
-### Focus
-- **Practical impact today** → analytics pipelines, dashboards, and models that drive business decisions.  
-- **Exploring tomorrow** → research in agent-based systems, biologically inspired computation, and advanced statistical modeling.  
+# What I deliver
+- **Business Intelligence**: Dashboards, SQL data models, Power BI, Looker Studio  
+- **Predictive Analytics**: End-to-end ML systems, sports forecasting (e.g. IPL win predictions)  
+- **Frontier AI Research**: Deep Learning, Agentic AI, Biologically Inspired Computation  
 
-[View Projects](/projects/) • [Contact Me](mailto:aman.valera@email.com)
+---
+
+# I’m a Data Scientist & Machine Learning Engineer
+Expertise in **sports analytics** and **business intelligence** — bridging pipelines, models, and product to deliver clarity.
+
+---
+
+# End-to-end systems that ship
+From SQL pipelines and dashboards to predictive ML models — including an **84% F1** in live IPL match predictions.
+
+---
+
+# Practical impact today. Exploring tomorrow.
+**Practical today** — analytics pipelines, dashboards, and models that drive decisions.  
+**Exploring tomorrow** — agentic approaches, biologically inspired computation, and statistical modeling.
