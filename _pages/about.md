@@ -22,7 +22,10 @@ header.page__header { display: none !important; }
   padding: 0 !important;
   box-sizing: border-box;
 }
-
+.sidebar {
+  position: relative; /* keeps it in the flow but allows offset */
+  left: 2rem;         /* adjust as needed, '2rem' ~ 32px */
+}
 #main {
   margin: 0 !important;
   padding: 0 !important;
