@@ -7,19 +7,19 @@ author_profile: true
 ---
 
 <style>
-/* Hide page title (kept for SEO) */
+/* Hide page title (SEO only, still present in DOM) */
 .page-title,
 h1.page__title,
 header.page__header { display: none !important; }
 
-/* Remove container restrictions */
+/* Reset main containers */
 .page__content, .page__inner-wrap {
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Snap scroll container */
+/* Snap scroll wrapper */
 .snap-container {
   height: 100vh;
   overflow-y: scroll;
@@ -29,7 +29,7 @@ header.page__header { display: none !important; }
   padding: 0;
 }
 
-/* Each section takes full viewport */
+/* Each section fills screen */
 .snap-section {
   min-height: 100vh;
   width: 100%;
@@ -38,16 +38,17 @@ header.page__header { display: none !important; }
   scroll-snap-align: start;
   box-sizing: border-box;
 
-  /* sidebar awareness */
-  padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
-  padding-right: var(--gutter, 2rem);
+  /* dynamic sidebar awareness */
+  padding-left: calc(var(--sidebar-width, 18rem) + var(--gutter, 2rem));
+  padding-right: 0; /* no right padding */
 
   color: #f5f5f5;
 }
 
-/* Inner content */
+/* Content box */
 .content-wrap {
   max-width: 65ch;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -63,7 +64,8 @@ header.page__header { display: none !important; }
   margin-bottom: 2rem;
   font-weight: 400;
 }
-.content-wrap p, .content-wrap ul {
+.content-wrap p,
+.content-wrap ul {
   font-size: 1rem;
   line-height: 1.6;
   color: #ddd;
@@ -72,11 +74,11 @@ header.page__header { display: none !important; }
 .content-wrap li { margin: .75rem 0; }
 
 /* Section gradients */
-.hero     { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
-.services { background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
-.about    { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
-.impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
-.focus    { background: #111; }
+.hero     .content-wrap { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; border-radius: 12px; padding: 3rem; }
+.services .content-wrap { background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; border-radius: 12px; padding: 3rem; }
+.about    .content-wrap { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; border-radius: 12px; padding: 3rem; }
+.impact   .content-wrap { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; border-radius: 12px; padding: 3rem; }
+.focus    .content-wrap { background: #111; border-radius: 12px; padding: 3rem; }
 </style>
 
 <div class="snap-container">
