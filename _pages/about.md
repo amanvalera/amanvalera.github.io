@@ -12,13 +12,25 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
+/* Make sections fill the full content column */
+.page__content {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.page__inner-wrap {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
 /* Section card base */
 .section-card {
   background: #111; 
   color: #f5f5f5;
   padding: 4rem 3rem;
   border-radius: 24px;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem 0;
+  width: 100%;
   box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
@@ -41,7 +53,7 @@ header.page__header { display: none !important; }
   font-size: 1.1rem;
   line-height: 1.6;
   color: #ddd;
-  max-width: 60ch;
+  max-width: 65ch;
 }
 
 .section-card ul {
