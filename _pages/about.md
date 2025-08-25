@@ -45,12 +45,18 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Snap scroll container */
-.snap-container {
-  height: 100vh;
-  overflow-y: scroll;
+/* Snap scroll on the page */
+html, body {
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper (not scrollable) */
+.snap-container {
+  height: auto;
+  overflow: visible;
   margin: 0;
   padding: 0;
 }
@@ -74,7 +80,7 @@ header.page__header { display: none !important; }
 /* Inner content */
 .content-wrap {
   max-width: 65ch;
-  margin: 0; /* no forced centering */
+  margin: 0;
   width: 100%;
   box-sizing: border-box;
 }
