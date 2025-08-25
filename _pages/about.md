@@ -45,21 +45,18 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Snap scroll container */
+/* Snap scroll on sections, not whole body */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* prevent double scrollbars */
+  overflow-y: auto; /* allow normal page scroll */
+  height: auto;
 }
 
+/* Snap container */
 .snap-container {
-  height: 100vh;
-  overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
-  margin: 0;
-  padding: 0;
 }
 
 /* Each snap section */
@@ -118,14 +115,14 @@ html, body {
   /* Sidebar sticky under masthead (dynamic) */
   .sidebar.sticky {
     position: sticky !important;
-    top: var(--masthead-height, 0px); /* dynamically uses nav height */
+    top: var(--masthead-height, 0px);
     left: 0 !important;
     width: 100% !important;
     margin: 0;
     padding: 1rem;
-    background: #111;   /* optional for contrast */
-    z-index: 1000;      /* keep above content */
-    border-radius: 0;   /* flush with masthead */
+    background: #111;
+    z-index: 1000;
+    border-radius: 0;
   }
 
   /* Ensure sections don't overlap sidebar */
@@ -142,11 +139,11 @@ html, body {
   }
 }
 
-/* Footer — restore to normal behavior */
+/* Footer — use theme footer normally */
 footer.site-footer {
-  min-height: auto;        /* no forced full-height */
-  scroll-snap-align: none; /* no snap */
-  display: block;          /* normal block footer */
+  min-height: auto;
+  scroll-snap-align: none;
+  display: block;
   padding: 2rem;
   text-align: center;
   background: #111;
