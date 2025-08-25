@@ -7,102 +7,81 @@ author_profile: true
 ---
 
 <style>
-/* Hide page title (SEO only) */
+/* Hide page title (kept for SEO) */
 .page-title,
 h1.page__title,
-header.page__header {
-  display: none !important;
-}
+header.page__header { display: none !important; }
 
-/* Remove container restrictions so sections can span full page */
-.page__content,
-.page__inner-wrap,
-.page {
-  max-width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Snap container: full height scroll */
+/* Snap scroll container */
 .snap-container {
   height: 100vh;
-  width: 100%;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+  margin: 0; 
+  padding: 0;
 }
 
-/* Snap sections: full page */
+/* Each section */
 .snap-section {
   min-height: 100vh;
-  width: 100vw;        /* take full page width */
   display: flex;
   align-items: center;
-  justify-content: center;
   scroll-snap-align: start;
-  color: #f5f5f5;
-  padding: 6rem 2rem;
+  padding: 0; /* let inner container handle spacing */
   box-sizing: border-box;
 }
 
-/* Content wrapper to keep readable text */
-.snap-section > div {
+/* Content wrapper: respects theme’s column width */
+.content-wrap {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  color: #f5f5f5;
 }
 
 /* Typography */
-.snap-section h1 {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  line-height: 1.25;
+.content-wrap h1 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
-
-.snap-section h2 {
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  font-weight: 400;
+.content-wrap h2 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: #ccc;
   margin-bottom: 2rem;
-  max-width: 65ch;
+  font-weight: 400;
 }
-
-.snap-section p,
-.snap-section ul {
-  font-size: 1.05rem;
+.content-wrap p, .content-wrap ul {
+  font-size: 1rem;
   line-height: 1.6;
   color: #ddd;
   max-width: 65ch;
 }
+.content-wrap ul { list-style: none; padding-left: 0; }
+.content-wrap li { margin: .75rem 0; }
 
-.snap-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-.snap-section li {
-  margin: .75rem 0;
-}
-
-/* Gradient backgrounds */
-.hero    { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
-.services{ background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
-.about   { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
-.impact  { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
-.focus   { background: radial-gradient(circle at 50% 50%, #000 0%, transparent 70%) #111; }
+/* Gradient backgrounds only on container */
+.hero    .content-wrap { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
+.services .content-wrap{ background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
+.about   .content-wrap{ background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
+.impact  .content-wrap{ background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
+.focus   .content-wrap{ background: #111; }
 </style>
 
 
 <div class="snap-container">
 
 <section class="snap-section hero">
-  <div>
+  <div class="content-wrap">
     <h1>Reimagining the future through the language of data.</h1>
     <h2>I don’t just analyze it — I transform it into insight.</h2>
   </div>
 </section>
 
 <section class="snap-section services">
-  <div>
+  <div class="content-wrap">
     <h1>What I deliver</h1>
     <ul>
       <li><strong>Business Intelligence</strong> — Dashboards, SQL data models, Power BI, Looker Studio</li>
@@ -113,21 +92,21 @@ header.page__header {
 </section>
 
 <section class="snap-section about">
-  <div>
+  <div class="content-wrap">
     <h1>I’m a Data Scientist & Machine Learning Engineer</h1>
     <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
   </div>
 </section>
 
 <section class="snap-section impact">
-  <div>
+  <div class="content-wrap">
     <h1>End-to-end systems that ship</h1>
     <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
   </div>
 </section>
 
 <section class="snap-section focus">
-  <div>
+  <div class="content-wrap">
     <h1>Practical impact today. Exploring tomorrow.</h1>
     <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
        <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
