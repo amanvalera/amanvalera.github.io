@@ -19,6 +19,17 @@ header.page__header { display: none !important; }
   padding: 0 !important;
 }
 
+/* Override theme .page layout on desktop */
+@media (min-width: 57.8125em) {
+  .page {
+    width: 100% !important;
+    float: none !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    padding-left: var(--gutter, 2rem) !important; /* keep left breathing room */
+  }
+}
+  
 /* Snap scroll container */
 .snap-container {
   height: 100vh;
