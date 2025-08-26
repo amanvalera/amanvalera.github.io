@@ -40,7 +40,7 @@ header.page__header { display: none !important; }
   .page {
     width: 100% !important;
     float: none !important;
-    margin: 0 !important;
+    margin: 0 0 2rem 0 !important; /* bottom margin added */
     padding: 0 !important;
   }
 }
@@ -137,7 +137,7 @@ footer.site-footer {
   background: #111;
   color: #f5f5f5;
   padding: 2rem;
-  margin: 0;
+  margin: 2rem 0 0 0; /* top margin added */
 }
 </style>
 
