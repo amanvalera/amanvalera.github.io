@@ -29,8 +29,22 @@ header.page__header { display: none !important; }
   max-width: 100% !important;
   box-sizing: border-box;
 }
+.sidebar {
+  position: fixed !important;
+  top: var(--masthead-height, 3.5rem);
+  left:var(--masthead-height, 3.5rem);
+  padding: 1rem;
+  min-width: 300px;    /* keeps a minimum width */
+  width: auto;         /* allow it to expand with content */
+  max-width: 380px;    /* optional cap so it doesn’t take half the screen */
+  height: calc(100vh - var(--masthead-height, 3.5rem));
+  overflow-y: auto;
+  z-index: 100;
+  background: #111;    /* keeps it consistent with sections */
+  box-sizing: border-box;
+}
 
-/* Sidebar default (desktop = fixed) */
+/* Sidebar default (desktop = fixed) 
 .sidebar {
   position: fixed !important;
   top: var(--masthead-height, 3.5rem);
@@ -39,8 +53,11 @@ header.page__header { display: none !important; }
   height: calc(100vh - var(--masthead-height, 3.5rem));
   overflow-y: auto;
   z-index: 100;
+}*/
+/* Override body padding-bottom (remove 9em gap) */
+body {
+  padding-bottom: 0 !important;
 }
-
 /* Desktop page layout */
 @media (min-width: 57.8125em) {
   .page {
