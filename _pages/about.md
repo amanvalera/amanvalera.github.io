@@ -76,9 +76,9 @@ header.page__header { display: none !important; }
 
 /* Inner content */
 .content-wrap {
-  max-width: 100% !important; /* wider than before */
+  max-width: 100% !important;  /* let it stretch full width */
+  width: 100% !important;
   margin: 0;
-  width: 100%;
   box-sizing: border-box;
 }
 
