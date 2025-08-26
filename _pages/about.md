@@ -260,8 +260,7 @@ footer.site-footer {
   <div class="content-wrap">
     <div class="kicker">Identity</div>
     <h1>Clarity from data</h1>
-    <p>I work across <strong>sports analytics</strong> and <strong>business intelligence</strong>. 
-       From pipelines to models to dashboards, I connect every layer into systems that support decisions.</p>
+    <p>I <strong>don't assume</strong>. I <strong>transform data</strong> to gain clarity.</p>
   </div>
 </section>
 
