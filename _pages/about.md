@@ -21,10 +21,12 @@ header.page__header { display: none !important; }
   padding: 0 !important;
   box-sizing: border-box;
 }
+  
 /* Override body padding-bottom (remove 9em gap) */
 body {
-  padding-bottom: 0 !important;
+  padding: 0 !important;
 }
+  
 #main {
   margin: 0 !important;
   padding: 0 !important;
