@@ -39,17 +39,14 @@ header.page__header { display: none !important; }
   height: calc(100vh - var(--masthead-height, 3.5rem));
   overflow-y: auto;
   z-index: 100 !important; /* raise above snap-container */
-  overflow: visible !important; /* allow dropdowns to escape */
+  overflow: visible !important;
 }
 .sidebar .dropdown,
-.sidebar .dropdown * {
-  overflow: visible !important; /* ensure nested dropdowns visible */
-} 
+.sidebar .dropdown * { overflow: visible !important; } 
 
 /* Override body padding-bottom (remove 9em gap) */
-body {
-  padding-bottom: 0 !important;
-}
+body { padding-bottom: 0 !important; }
+
 /* Desktop page layout */
 @media (min-width: 57.8125em) {
   .page {
@@ -122,9 +119,7 @@ body {
   padding-left: 1.5rem;
   margin: 1rem 0;
 }
-.content-wrap li {
-  margin: 0.5rem 0;
-}
+.content-wrap li { margin: 0.5rem 0; }
 
 /* Pills + buttons */
 .pill {
@@ -147,11 +142,12 @@ body {
 .cta-ghost { border: 1px solid #444; color: #f5f5f5; margin-left: .5rem; }
 
 /* Section gradients */
-.hero     { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
-.services { background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
-.about    { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
-.impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
-.focus    { background: #111; }
+.hero             { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
+.services         { background: radial-gradient(circle at 20% 10%, #253b59 0%, transparent 70%) #111; }
+.identity-section { background: radial-gradient(circle at 80% 80%, #2c4c3b 0%, transparent 70%) #111; }
+.impact           { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
+.focus            { background: #111; }
+.about-personal   { background: radial-gradient(circle at 50% 80%, #4b2c5a 0%, transparent 70%) #111; }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -224,8 +220,8 @@ footer.site-footer {
 <section class="snap-section hero" id="hero">
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
-    <h1>I don’t just analyze data. <br> I weaponize it into insights.</h1>
-    <h2>From sports to business, I build systems that explain the present and predict what’s ahead.</h2>
+    <h1>Reimagining the future through the language of data.</h1>
+    <h2>Data isn’t just numbers — it’s stories, systems, and signals. I work on turning it into something people can use.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
       <a class="cta cta-ghost" href="#impact">See Results</a>
@@ -237,7 +233,7 @@ footer.site-footer {
 <section class="snap-section services" id="services">
   <div class="content-wrap">
     <div class="kicker">Services</div>
-    <h1>What I deliver</h1>
+    <h1>What I Work On</h1>
     <div class="grid grid-3" style="margin-top:1.5rem;">
       <div class="card">
         <h2>Business Intelligence</h2>
@@ -259,16 +255,13 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="snap-section about" id="about">
+<!-- IDENTITY (professional about) -->
+<section class="snap-section identity-section" id="identity">
   <div class="content-wrap">
     <div class="kicker">Identity</div>
     <h1>Clarity from data</h1>
-    <p>I work across <strong>sports analytics</strong> and <strong>business intelligence</strong>. From pipelines to models to dashboards, I connect every layer into systems that support real decisions.</p>
-    <div style="margin-top:1.6rem;">
-      <a class="cta cta-primary" href="/projects/">View Projects</a>
-      <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
-    </div>
+    <p>I work across <strong>sports analytics</strong> and <strong>business intelligence</strong>. 
+       From pipelines to models to dashboards, I connect every layer into systems that support real decisions.</p>
   </div>
 </section>
 
@@ -283,7 +276,7 @@ footer.site-footer {
       <li>Applied research methods directly in working systems, not just prototypes.</li>
     </ul>
     <div style="margin-top:1.6rem;">
-      <a class="cta cta-primary" href="/projects/">Explore the work</a>
+      <a class="cta cta-primary" href="/projects/">Explore Projects</a>
       <a class="cta cta-ghost" href="#hero">Back to top</a>
     </div>
   </div>
@@ -296,6 +289,25 @@ footer.site-footer {
     <h1>Now and next</h1>
     <p><strong>Now:</strong> dashboards, pipelines, and predictive models used every day.<br>
        <strong>Next:</strong> adaptive intelligence and agentic AI expanding how decisions are made.</p>
+  </div>
+</section>
+
+<!-- ABOUT ME (personal story, last section) -->
+<section class="snap-section about-personal" id="about-me">
+  <div class="content-wrap">
+    <div class="kicker">About Me</div>
+    <h1>A curious builder</h1>
+    <p>
+      I’m Aman Valera. My background is in <strong>Data Science</strong> and <strong>Machine Learning</strong>,  
+      but what drives me is curiosity. I like asking not just <em>what happened</em>,  
+      but <em>why it happened</em> — and <em>what might happen next</em>.  
+      <br><br>
+      That curiosity took me from designing BI dashboards to building predictive systems in <strong>sports analytics</strong>.  
+      Cricket, in particular, has been a space where I’ve combined passion with data — forecasting match outcomes, modeling momentum shifts, and showing how data can tell the story of a game.  
+      <br><br>
+      Beyond sport, I explore how AI can mirror the complexity of nature, and how abstract models can be turned into practical tools.  
+      I see myself as a builder: someone who connects pipelines, models, and decisions into systems people can actually use.
+    </p>
   </div>
 </section>
 
