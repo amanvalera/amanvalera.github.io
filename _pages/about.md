@@ -224,7 +224,7 @@ footer.site-footer {
 <section class="snap-section hero" id="hero">
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
-    <h1>I don’t just analyze data. <br> I weaponize it into insights</h1>
+    <h1>I don’t just analyze data. <br> I weaponize it into insights.</h1>
     <h2>From sports to business, I build systems that explain the present and predict what’s ahead.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
@@ -254,7 +254,7 @@ footer.site-footer {
     </div>
     <div style="margin-top:1rem;">
       <span class="pill">Power BI</span><span class="pill">Looker Studio</span><span class="pill">SQL</span>
-      <span class="pill">Python</span><span class="pill">scikit-learn</span><span class="pill">AWS</span>
+      <span class="pill">Python</span><span class="pill">n8n</span>
     </div>
   </div>
 </section>
