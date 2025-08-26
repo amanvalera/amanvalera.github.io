@@ -30,30 +30,11 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
   
-/* Sidebar stays scrollable and clipped
-.sidebar {
-  position: fixed !important;
-  top: var(--masthead-height, 3.5rem);
-  padding-left: var(--masthead-height, 3.5rem);
-  width: var(--sidebar-width, 300px);
-  height: calc(100vh - var(--masthead-height, 3.5rem));
-  overflow-y: auto; /* keep sidebar content neat */
-  z-index: 2000 !important;
-}
-
-/* Allow dropdown bubbles to escape */
-.sidebar .dropdown,
-.sidebar .dropdown * {
-  overflow: visible !important;
-  z-index: 3000 !important;
-  position: relative;
-} */
-  
 /* Sidebar default (desktop = fixed)*/
 .sidebar {
   position: fixed !important;
   top: var(--masthead-height, 3.5rem);
-  padding-left: var(--masthead-height, 3.5rem);
+  left: var(--masthead-height, 3.5rem);
   width: var(--sidebar-width, 300px);
   height: calc(100vh - var(--masthead-height, 3.5rem));
   overflow-y: auto;
