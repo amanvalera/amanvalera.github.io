@@ -30,7 +30,7 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar offset (desktop) */
+/* Sidebar offset */
 .sidebar {
   left: 2em;
 }
@@ -45,21 +45,17 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Body scrolls everything (sections + footer) */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  overflow-y: auto;
-}
-
-/* Snap container controls snapping */
+/* Snap scroll container */
 .snap-container {
+  height: 100vh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
 }
 
-/* Each snap section */
+/* Each section takes full viewport */
 .snap-section {
   min-height: 100vh;
   width: 100%;
@@ -67,22 +63,18 @@ html, body {
   align-items: center;
   scroll-snap-align: start;
   box-sizing: border-box;
-  color: #f5f5f5;
 
   /* sidebar awareness on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
-}
 
-/* Last snap locks before footer */
-.snap-section:last-of-type {
-  scroll-snap-stop: always;
+  color: #f5f5f5;
 }
 
 /* Inner content */
 .content-wrap {
   max-width: 65ch;
-  margin: 0;
+  margin: 0; /* no forced centering */
   width: 100%;
   box-sizing: border-box;
 }
@@ -116,42 +108,15 @@ html, body {
 
 /* Mobile-friendly layout */
 @media (max-width: 768px) {
-  /* Sidebar sticky under masthead (dynamic) */
-  .sidebar.sticky {
-    position: sticky !important;
-    top: var(--masthead-height, 0px);
-    left: 0 !important;
-    width: 100% !important;
-    margin: 0;
-    padding: 1rem;
-    background: #111;
-    z-index: 1000;
-    border-radius: 0;
-  }
-
-  /* Ensure sections don't overlap sidebar */
   .snap-section {
-    padding-top: calc(var(--masthead-height, 0px) + 1rem);
-    padding-left: var(--gutter, 1rem) !important;
-    padding-right: var(--gutter, 1rem) !important;
+    padding-left: var(--gutter, 1rem);
+    padding-right: var(--gutter, 1rem);
   }
-
   .content-wrap {
     max-width: 100%;
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
   }
-}
-
-/* Footer — let OG Minimal Mistakes footer behave normally */
-footer.site-footer {
-  min-height: auto;
-  scroll-snap-align: none; /* no snapping */
-  display: block;
-  padding: 2rem;
-  text-align: center;
-  background: #111;
-  color: #f5f5f5;
 }
 </style>
 
@@ -198,3 +163,5 @@ footer.site-footer {
 </section>
 
 </div>
+
+Without changing anything can we put the sections into the main page for seamless scrolling to footer
