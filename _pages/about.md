@@ -12,12 +12,6 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
-/* Remove injected body spacing */
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 /* Remove container restrictions */
 .page__inner-wrap,
 .page__content {
@@ -46,7 +40,7 @@ body {
   .page {
     width: 100% !important;
     float: none !important;
-    margin: 0 !important;
+    margin: 0 !important;   /* remove bottom margin */
     padding: 0 !important;
   }
 }
@@ -79,7 +73,7 @@ body {
 /* Inner content */
 .content-wrap {
   max-width: 65ch;
-  margin: 0;
+  margin: 0; /* no extra margins */
   width: 100%;
   box-sizing: border-box;
 }
@@ -136,16 +130,18 @@ body {
   }
 }
 
-/* Footer reset */
+/* Footer reset (NOT snapping) */
 .page__footer {
-  margin: 0 !important;
+  margin: 0 !important;    /* remove top/bottom margins */
   padding: 0 !important;
 }
-.page__footer footer {
-  margin: 0 !important;
-  padding: 2rem !important; /* inner breathing space */
+footer.site-footer {
+  min-height: auto;
+  scroll-snap-align: none !important;
   background: #111;
   color: #f5f5f5;
+  margin: 0 !important;    /* no margins */
+  padding: 2rem;           /* only padding for spacing */
 }
 </style>
 
