@@ -34,7 +34,7 @@ header.page__header { display: none !important; }
 .sidebar {
   position: fixed !important;
   top: var(--masthead-height, 3.5rem);
-  left: 2em;
+  padding-left: 2rem;
   width: var(--sidebar-width, 300px);
   height: calc(100vh - var(--masthead-height, 3.5rem));
   overflow-y: auto;
