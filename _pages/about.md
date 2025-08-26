@@ -30,9 +30,13 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar offset (desktop) */
+/* Sidebar sticky by default */
 .sidebar {
+  position: sticky !important;
+  top: var(--masthead-height, 3.5rem);
   left: 2em;
+  height: fit-content;
+  z-index: 100;
 }
 
 /* Desktop page layout */
@@ -45,19 +49,12 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Use body as scroll container */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+/* Snap scroll only on container */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
-}
-
-/* Snap container stretches, no scroll */
-.snap-container {
-  height: auto;
-  overflow: visible;
   margin: 0;
   padding: 0;
 }
@@ -114,15 +111,13 @@ html, body {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .sidebar.sticky {
-    position: sticky !important;
-    top: var(--masthead-height, 3.5rem);
+  .sidebar {
     left: 0 !important;
     width: 100% !important;
     margin: 0;
     padding: 1rem;
     background: #111;
-    z-index: 1000;
+    border-radius: 0;
   }
 
   .snap-section {
