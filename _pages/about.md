@@ -107,6 +107,15 @@ header.page__header { display: none !important; }
   line-height: 1.6;
   color: #ddd;
 }
+.content-wrap ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+.content-wrap li {
+  margin: 0.5rem 0;
+  color: #ddd;
+}
 
 /* Pills + buttons */
 .pill {
@@ -286,9 +295,11 @@ body {
   <div class="content-wrap">
     <div class="kicker">Impact</div>
     <h1>Results</h1>
-    <p>⚡ SQL pipelines and dashboards in production.<br>
-       ⚡ Live predictive models delivering <strong>84% F1</strong> during IPL matches.<br>
-       ⚡ Research applied in working systems, not just theory.</p>
+    <ul>
+      <li>SQL pipelines and dashboards in production.</li>
+      <li>Live predictive models delivering <strong>84% F1</strong> during IPL matches.</li>
+      <li>Research applied in working systems, not just theory.</li>
+    </ul>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="/projects/">Explore the work</a>
       <a class="cta cta-ghost" href="#hero">Back to top</a>
