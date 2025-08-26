@@ -186,6 +186,43 @@ footer.site-footer {
 body {
   padding-bottom: 0 !important;
 }
+  
+/* Grid for services */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}
+
+/* Card styling */
+.card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.card p {
+  margin: 0;
+  color: #ccc;
+}
 </style>
 
 <div class="snap-container">
@@ -208,20 +245,22 @@ body {
   <div class="content-wrap">
     <div class="kicker">Services</div>
     <h1>What I deliver</h1>
-    <div class="grid grid-3" style="margin-top:1.1rem;">
-      <div>
+
+    <div class="grid grid-3" style="margin-top:1.5rem;">
+      <div class="card">
         <h2>Business Intelligence</h2>
         <p>Dashboards, SQL data models, Power BI, Looker Studio</p>
       </div>
-      <div>
+      <div class="card">
         <h2>Predictive Analytics</h2>
         <p>End-to-end ML systems, sports forecasting (e.g. IPL win predictions)</p>
       </div>
-      <div>
+      <div class="card">
         <h2>Frontier AI Research</h2>
         <p>Deep Learning, Agentic AI, Biologically Inspired Computation</p>
       </div>
     </div>
+
     <div style="margin-top:1rem;">
       <span class="pill">Power BI</span><span class="pill">Looker Studio</span><span class="pill">SQL</span>
       <span class="pill">Python</span><span class="pill">scikit-learn</span><span class="pill">AWS</span>
