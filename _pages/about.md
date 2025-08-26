@@ -30,27 +30,12 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar sticky (desktop) with left offset */
-.sidebar.sticky {
-  position: sticky !important;
-  top: var(--masthead-height, 60px);
-  align-self: flex-start;
-  height: calc(100vh - var(--masthead-height, 60px));
-  overflow-y: auto;
-  margin-left: 2em;   /* ← sidebar offset restored */
+/* Sidebar base */
+.sidebar {
+  left: 2em; /* small offset from edge */
 }
 
-/* Override theme .page layout on desktop */
-@media (min-width: 57.8125em) {
-  .page {
-    width: 100% !important;
-    float: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-
-/* Full-page snap scrolling */
+/* Full-page snap scroll */
 html, body {
   height: 100%;
   margin: 0;
@@ -59,7 +44,7 @@ html, body {
   overscroll-behavior-y: contain;
 }
 
-/* Snap container — passive wrapper */
+/* Container is just a wrapper, not scrollable */
 .snap-container {
   height: auto;
   overflow: visible;
@@ -67,20 +52,23 @@ html, body {
   padding: 0;
 }
 
-/* Each section */
-.snap-section {
+/* Snap targets */
+.snap-section,
+footer.site-footer {
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  scroll-snap-align: start;
   box-sizing: border-box;
+  color: #f5f5f5;
+
+  /* snap behavior */
+  scroll-snap-align: start;
+  scroll-margin-top: var(--masthead-height, 60px); /* prevent hiding under nav */
 
   /* sidebar awareness on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
-
-  color: #f5f5f5;
 }
 
 /* Inner content */
@@ -118,25 +106,43 @@ html, body {
 .impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus    { background: #111; }
 
-/* Mobile layout fixes */
+/* Desktop sidebar sticky beside content */
+@media (min-width: 57.8125em) {
+  #main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .sidebar.sticky {
+    position: sticky;
+    top: var(--masthead-height, 60px);
+    margin-left: 2em;
+    flex: 0 0 var(--sidebar-width, 320px);
+    height: calc(100vh - var(--masthead-height, 60px));
+    overflow-y: auto;
+  }
+
+  .snap-container {
+    flex: 1;
+  }
+}
+
+/* Mobile-friendly layout */
 @media (max-width: 768px) {
   .sidebar.sticky {
-    position: relative !important; /* no sticky on mobile */
+    position: relative;   /* no sticky on mobile */
     top: auto;
-    left: auto;
-    width: 100% !important;
-    height: auto !important;
-    overflow: visible;
-    margin: 0 0 1rem 0; /* margin-left removed on mobile */
-    padding: 1rem;
-    background: #111;
-    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    background: #111; /* optional */
+    z-index: 1000;
   }
 
   .snap-section {
-    padding-left: var(--gutter, 1rem) !important;
-    padding-right: var(--gutter, 1rem) !important;
     padding-top: 1rem;
+    padding-left: var(--gutter, 1rem);
+    padding-right: var(--gutter, 1rem);
   }
 
   .content-wrap {
@@ -146,23 +152,13 @@ html, body {
   }
 }
 
-/* Footer participates in snap */
+/* Footer styling */
 footer.site-footer {
-  min-height: 100vh;
-  scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #f5f5f5;
   background: #111;
-}
-
-/* Remove unwanted bottom spacing */
-.page {
-  margin-bottom: 0 !important;
-}
-.page__footer,
-footer.page__meta {
   margin: 0 !important;
   padding: 0 !important;
 }
