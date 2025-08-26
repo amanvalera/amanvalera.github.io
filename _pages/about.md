@@ -288,7 +288,7 @@ footer.site-footer {
     <div class="kicker">Focus</div>
     <h1>Now and next</h1>
     <p><strong>Now:</strong> dashboards, pipelines, and predictive models used every day.<br>
-       <strong>Next:</strong> adaptive intelligence and agentic AI expanding how decisions are made.</p>
+       <strong>Next:</strong> automated and agentic systems expanding how decisions are made.</p>
   </div>
 </section>
 
