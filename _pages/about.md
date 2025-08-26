@@ -72,7 +72,7 @@ header.page__header { display: none !important; }
 
   /* sidebar awareness */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
-  padding-right: var(--gutter, 2rem);
+  padding-right: 0 !important; /* 🔥 remove purple gap */
   color: #f5f5f5;
 }
 
@@ -96,30 +96,10 @@ header.page__header { display: none !important; }
   margin-bottom: 1rem;
   font-weight: 600;
 }
-.content-wrap p, .content-wrap ul {
+.content-wrap p {
   font-size: 1rem;
   line-height: 1.6;
   color: #ddd;
-}
-.content-wrap ul { list-style: none; padding-left: 0; }
-.content-wrap li { margin: .75rem 0; }
-
-/* Cards + grids */
-.card {
-  background: #2b2b2b;
-  border-radius: 20px;
-  padding: 1.25rem 1.4rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
-.grid {
-  display: grid;
-  gap: 1.1rem;
-}
-.grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-@media (max-width: 900px) {
-  .grid-3 { grid-template-columns: 1fr; }
 }
 
 /* Pills + buttons */
@@ -141,6 +121,14 @@ header.page__header { display: none !important; }
 }
 .cta-primary { background: #9b87f5; color: #0e0a21; }
 .cta-ghost { border: 1px solid #444; color: #f5f5f5; margin-left: .5rem; }
+
+/* Kill card look */
+.card { 
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
 
 /* Section gradients */
 .hero     { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
@@ -244,13 +232,11 @@ body {
 <!-- ABOUT -->
 <section class="snap-section about">
   <div class="content-wrap">
-    <div class="card">
-      <h1>I’m a Data Scientist &amp; Machine Learning Engineer</h1>
-      <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
-      <div style="margin-top:1.6rem;">
-        <a class="cta cta-primary" href="/projects/">View Projects</a>
-        <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
-      </div>
+    <h1>I’m a Data Scientist &amp; Machine Learning Engineer</h1>
+    <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
+    <div style="margin-top:1.6rem;">
+      <a class="cta cta-primary" href="/projects/">View Projects</a>
+      <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
     </div>
   </div>
 </section>
@@ -258,13 +244,11 @@ body {
 <!-- IMPACT -->
 <section class="snap-section impact">
   <div class="content-wrap">
-    <div class="card">
-      <h1>End-to-end systems that ship</h1>
-      <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
-      <div style="margin-top:1.6rem;">
-        <a class="cta cta-primary" href="/projects/">Explore the work</a>
-        <a class="cta cta-ghost" href="#hero">Back to top</a>
-      </div>
+    <h1>End-to-end systems that ship</h1>
+    <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
+    <div style="margin-top:1.6rem;">
+      <a class="cta cta-primary" href="/projects/">Explore the work</a>
+      <a class="cta cta-ghost" href="#hero">Back to top</a>
     </div>
   </div>
 </section>
@@ -272,11 +256,9 @@ body {
 <!-- FOCUS -->
 <section class="snap-section focus">
   <div class="content-wrap">
-    <div class="card">
-      <h1>Practical impact today. Exploring tomorrow.</h1>
-      <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
-         <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
-    </div>
+    <h1>Practical impact today. Exploring tomorrow.</h1>
+    <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
+       <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
   </div>
 </section>
 
