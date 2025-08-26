@@ -29,8 +29,27 @@ header.page__header { display: none !important; }
   max-width: 100% !important;
   box-sizing: border-box;
 }
+  
+/* Sidebar stays scrollable and clipped */
+.sidebar {
+  position: fixed !important;
+  top: var(--masthead-height, 3.5rem);
+  padding-left: var(--masthead-height, 3.5rem);
+  width: var(--sidebar-width, 300px);
+  height: calc(100vh - var(--masthead-height, 3.5rem));
+  overflow-y: auto; /* keep sidebar content neat */
+  z-index: 2000 !important;
+}
 
-/* Sidebar default (desktop = fixed) */
+/* Allow dropdown bubbles to escape */
+.sidebar .dropdown,
+.sidebar .dropdown * {
+  overflow: visible !important;
+  z-index: 3000 !important;
+  position: relative;
+}
+  
+/* Sidebar default (desktop = fixed)
 .sidebar {
   position: fixed !important;
   top: var(--masthead-height, 3.5rem);
@@ -43,7 +62,7 @@ header.page__header { display: none !important; }
 }
 .sidebar * {
   overflow: visible !important; /* ensure nested dropdowns visible */
-}
+} */
 
 /* Override body padding-bottom (remove 9em gap) */
 body {
