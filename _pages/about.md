@@ -30,13 +30,14 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar sticky (desktop only) */
+/* Sidebar sticky (desktop) with left offset */
 .sidebar.sticky {
   position: sticky !important;
   top: var(--masthead-height, 60px);
   align-self: flex-start;
   height: calc(100vh - var(--masthead-height, 60px));
   overflow-y: auto;
+  margin-left: 2em;   /* ← sidebar offset restored */
 }
 
 /* Override theme .page layout on desktop */
@@ -49,14 +50,16 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Snap scroll container */
+/* Full-page snap scrolling */
 html, body {
-  scroll-snap-type: y mandatory;
-  overscroll-behavior-y: contain;
+  height: 100%;
   margin: 0;
   padding: 0;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
 }
 
+/* Snap container — passive wrapper */
 .snap-container {
   height: auto;
   overflow: visible;
@@ -73,7 +76,7 @@ html, body {
   scroll-snap-align: start;
   box-sizing: border-box;
 
-  /* sidebar offset on desktop */
+  /* sidebar awareness on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
 
@@ -124,7 +127,7 @@ html, body {
     width: 100% !important;
     height: auto !important;
     overflow: visible;
-    margin: 0 0 1rem 0; /* put it above sections */
+    margin: 0 0 1rem 0; /* margin-left removed on mobile */
     padding: 1rem;
     background: #111;
     border-radius: 0;
