@@ -45,14 +45,19 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Body scrolls everything (sections + footer) */
+/* Body scrolls everything */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-y: auto;
-  scroll-snap-type: y mandatory; /* snap applies on body */
+  scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+}
+
+/* Snap container just groups sections */
+.snap-container {
+  width: 100%;
 }
 
 /* Each snap section */
@@ -70,7 +75,7 @@ html, body {
   padding-right: var(--gutter, 2rem);
 }
 
-/* Force last section to lock before footer */
+/* Force last snap section to lock before footer */
 .snap-section:last-of-type {
   scroll-snap-stop: always;
 }
@@ -139,7 +144,7 @@ html, body {
   }
 }
 
-/* Footer — original theme footer, normal scroll (no snap) */
+/* Footer — inside snap-container, but no snap */
 footer.site-footer {
   min-height: auto;
   scroll-snap-align: none;
@@ -192,5 +197,10 @@ footer.site-footer {
        <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
   </div>
 </section>
+
+<!-- OG theme footer now comes here, inside the snap-container -->
+<footer class="site-footer">
+  {{ site.footer | default: site.github }}
+</footer>
 
 </div>
