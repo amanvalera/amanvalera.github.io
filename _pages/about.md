@@ -76,7 +76,7 @@ header.page__header { display: none !important; }
 
 /* Inner content */
 .content-wrap {
-  max-width: 100% !important;  /* let it stretch full width */
+  max-width: 100% !important;
   width: 100% !important;
   margin: 0;
   box-sizing: border-box;
@@ -102,7 +102,8 @@ header.page__header { display: none !important; }
   margin-bottom: 1rem;
   font-weight: 600;
 }
-.content-wrap p {
+.content-wrap p, 
+.content-wrap ul {
   font-size: 1rem;
   line-height: 1.6;
   color: #ddd;
@@ -114,7 +115,6 @@ header.page__header { display: none !important; }
 }
 .content-wrap li {
   margin: 0.5rem 0;
-  color: #ddd;
 }
 
 /* Pills + buttons */
@@ -170,18 +170,11 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Kill empty meta block that creates extra gap */
-.page__meta {
-  display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+/* Kill empty meta block */
+.page__meta { display: none !important; }
 
-/* Footer reset (NOT snapping) */
-.page__footer {
-  margin: 0 !important;
-  padding: 0 !important;
-}
+/* Footer */
+.page__footer { margin: 0 !important; padding: 0 !important; }
 footer.site-footer {
   min-height: auto;
   scroll-snap-align: none !important;
@@ -191,24 +184,10 @@ footer.site-footer {
   padding: 2rem;
 }
 
-/* Override body padding-bottom (remove 9em gap) */
-body {
-  padding-bottom: 0 !important;
-}
-  
 /* Grid for services */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-@media (max-width: 900px) {
-  .grid-3 {
-    grid-template-columns: 1fr; /* stack on mobile */
-  }
-}
+.grid { display: grid; gap: 1.5rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
 
 /* Card styling */
 .card {
@@ -223,15 +202,11 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 .card h2 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem 0;
   font-size: 1.4rem;
   color: #fff;
 }
-.card p {
-  margin: 0;
-  color: #ccc;
-}
+.card p { margin: 0; color: #ccc; }
 </style>
 
 <div class="snap-container">
@@ -254,22 +229,20 @@ body {
   <div class="content-wrap">
     <div class="kicker">Services</div>
     <h1>What I deliver</h1>
-
     <div class="grid grid-3" style="margin-top:1.5rem;">
       <div class="card">
         <h2>Business Intelligence</h2>
-        <p>Dashboards and SQL pipelines that give leaders a clear view of performance. Power BI and Looker Studio included.</p>
+        <p>Dashboards and SQL pipelines for real-time visibility. Power BI and Looker Studio supported.</p>
       </div>
       <div class="card">
         <h2>Predictive Analytics</h2>
-        <p>Machine learning that drives strategy — including <strong>84% F1 accuracy</strong> on IPL predictions.</p>
+        <p>Machine learning for forecasting and strategy — applied across business and sport.</p>
       </div>
       <div class="card">
         <h2>AI Research</h2>
-        <p>Exploring agentic systems, deep learning, and biologically inspired methods for the next generation of analytics.</p>
+        <p>Exploring agentic systems, deep learning, and biologically inspired methods to shape what comes next.</p>
       </div>
     </div>
-
     <div style="margin-top:1rem;">
       <span class="pill">Power BI</span><span class="pill">Looker Studio</span><span class="pill">SQL</span>
       <span class="pill">Python</span><span class="pill">scikit-learn</span><span class="pill">AWS</span>
@@ -296,9 +269,9 @@ body {
     <div class="kicker">Impact</div>
     <h1>Results</h1>
     <ul>
-      <li>SQL pipelines and dashboards in production.</li>
-      <li>Live predictive models delivering <strong>84% F1</strong> during IPL matches.</li>
-      <li>Research applied in working systems, not just theory.</li>
+      <li>Delivered production SQL pipelines and executive dashboards.</li>
+      <li>Built predictive models achieving <strong>84% F1</strong> in live IPL match outcomes.</li>
+      <li>Applied research methods directly in working systems, not just prototypes.</li>
     </ul>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="/projects/">Explore the work</a>
