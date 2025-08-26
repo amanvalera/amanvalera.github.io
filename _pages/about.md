@@ -30,12 +30,14 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar sticky by default */
+/* Sidebar default (desktop = fixed) */
 .sidebar {
-  position: sticky !important;
+  position: fixed !important;
   top: var(--masthead-height, 3.5rem);
   left: 2em;
-  height: fit-content;
+  width: var(--sidebar-width, 300px);
+  height: calc(100vh - var(--masthead-height, 3.5rem));
+  overflow-y: auto;
   z-index: 100;
 }
 
@@ -112,8 +114,11 @@ header.page__header { display: none !important; }
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .sidebar {
+    position: sticky !important;
+    top: var(--masthead-height, 3.5rem);
     left: 0 !important;
     width: 100% !important;
+    height: auto !important;
     margin: 0;
     padding: 1rem;
     background: #111;
