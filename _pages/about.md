@@ -12,49 +12,39 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
-/* Remove container restrictions */
+/* Reset containers */
 .page__inner-wrap,
-.page__content {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box;
-}
-
+.page__content,
 #main {
-  margin: 0 !important;
-  padding: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
   box-sizing: border-box;
 }
 
-/* Sidebar base */
-.sidebar {
-  left: 2em;
+/* Sidebar (desktop sticky, below masthead) */
+.sidebar.sticky {
+  position: sticky;
+  top: var(--masthead-height, 60px);
+  margin-left: 2em;
+  flex: 0 0 var(--sidebar-width, 320px);
+  height: calc(100vh - var(--masthead-height, 60px));
+  overflow-y: auto;
+  z-index: 10;
 }
 
-/* Full-page snap scroll */
+/* Snap scroll across whole page */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
 }
 
-/* Snap container just a wrapper */
-.snap-container {
-  height: auto;
-  overflow: visible;
-  margin: 0;
-  padding: 0;
-}
-
-/* Snap targets (sections + footer) */
-.snap-section,
-footer.site-footer {
+/* Snap sections */
+.snap-section {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -62,7 +52,6 @@ footer.site-footer {
   box-sizing: border-box;
   color: #f5f5f5;
 
-  /* snap behavior */
   scroll-snap-align: start;
   scroll-margin-top: var(--masthead-height, 60px);
 
@@ -71,7 +60,7 @@ footer.site-footer {
   padding-right: var(--gutter, 2rem);
 }
 
-/* Inner content */
+/* Content inside each section */
 .content-wrap {
   max-width: 65ch;
   margin: 0;
@@ -106,23 +95,13 @@ footer.site-footer {
 .impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus    { background: #111; }
 
-/* Desktop layout */
+/* Desktop layout: sidebar + content */
 @media (min-width: 57.8125em) {
   #main {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
   }
-
-  .sidebar.sticky {
-    position: sticky;
-    top: var(--masthead-height, 60px);
-    margin-left: 2em;
-    flex: 0 0 var(--sidebar-width, 320px);
-    height: calc(100vh - var(--masthead-height, 60px));
-    overflow-y: auto;
-  }
-
   .snap-container {
     flex: 1;
   }
@@ -133,14 +112,16 @@ footer.site-footer {
   .sidebar.sticky {
     position: relative;
     top: auto;
+    left: 0;
     margin: 0;
-    width: 100%;
+    width: 100% !important;
+    height: auto;
     background: #111;
-    z-index: 1000;
+    padding: 1rem;
+    border-radius: 0;
   }
 
-  .snap-section,
-  footer.site-footer {
+  .snap-section {
     padding-top: 1rem;
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
@@ -151,15 +132,6 @@ footer.site-footer {
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
   }
-}
-
-/* Footer styling */
-footer.site-footer {
-  justify-content: center;
-  background: #111;
-  margin: 0 !important;
-  padding: 2rem !important;
-  text-align: center;
 }
 </style>
 
@@ -204,9 +176,5 @@ footer.site-footer {
        <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
   </div>
 </section>
-
-<footer class="site-footer">
-  <p>© 2025 Aman Valera — All rights reserved.</p>
-</footer>
 
 </div>
