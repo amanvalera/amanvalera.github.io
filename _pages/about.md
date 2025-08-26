@@ -93,8 +93,8 @@ header.page__header { display: none !important; }
 .content-wrap h2 {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   color: #ccc;
-  margin-bottom: 2rem;
-  font-weight: 400;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 .content-wrap p, .content-wrap ul {
   font-size: 1rem;
@@ -103,6 +103,44 @@ header.page__header { display: none !important; }
 }
 .content-wrap ul { list-style: none; padding-left: 0; }
 .content-wrap li { margin: .75rem 0; }
+
+/* Cards + grids */
+.card {
+  background: #2b2b2b;
+  border-radius: 20px;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.grid {
+  display: grid;
+  gap: 1.1rem;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Pills + buttons */
+.pill {
+  display: inline-block;
+  background: #363636;
+  color: #eaeaea;
+  border-radius: 999px;
+  padding: .45rem .9rem;
+  margin: .25rem .35rem .35rem 0;
+  font-size: .95rem;
+}
+.cta {
+  display: inline-block;
+  padding: .9rem 1.15rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.cta-primary { background: #9b87f5; color: #0e0a21; }
+.cta-ghost { border: 1px solid #444; color: #f5f5f5; margin-left: .5rem; }
 
 /* Section gradients */
 .hero     { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
@@ -166,43 +204,79 @@ body {
 
 <div class="snap-container">
 
+<!-- HERO -->
 <section class="snap-section hero">
   <div class="content-wrap">
     <h1>Reimagining the future through the language of data.</h1>
     <h2>I don’t just analyze it — I transform it into insight.</h2>
+    <div style="margin-top:1.6rem;">
+      <a class="cta cta-primary" href="#services">See Services</a>
+      <a class="cta cta-ghost" href="#impact">See Results</a>
+    </div>
   </div>
 </section>
 
-<section class="snap-section services">
+<!-- SERVICES -->
+<section class="snap-section services" id="services">
   <div class="content-wrap">
     <h1>What I deliver</h1>
-    <ul>
-      <li><strong>Business Intelligence</strong> — Dashboards, SQL data models, Power BI, Looker Studio</li>
-      <li><strong>Predictive Analytics</strong> — End-to-end ML systems, sports forecasting (e.g. IPL win predictions)</li>
-      <li><strong>Frontier AI Research</strong> — Deep Learning, Agentic AI, Biologically Inspired Computation</li>
-    </ul>
+    <div class="grid grid-3" style="margin-top:1.1rem;">
+      <div class="card">
+        <h2>Business Intelligence</h2>
+        <p>Dashboards, SQL data models, Power BI, Looker Studio</p>
+      </div>
+      <div class="card">
+        <h2>Predictive Analytics</h2>
+        <p>End-to-end ML systems, sports forecasting (e.g. IPL win predictions)</p>
+      </div>
+      <div class="card">
+        <h2>Frontier AI Research</h2>
+        <p>Deep Learning, Agentic AI, Biologically Inspired Computation</p>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <span class="pill">Power BI</span><span class="pill">Looker Studio</span><span class="pill">SQL</span>
+      <span class="pill">Python</span><span class="pill">scikit-learn</span><span class="pill">AWS</span>
+    </div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section class="snap-section about">
   <div class="content-wrap">
-    <h1>I’m a Data Scientist & Machine Learning Engineer</h1>
-    <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
+    <div class="card">
+      <h1>I’m a Data Scientist &amp; Machine Learning Engineer</h1>
+      <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
+      <div style="margin-top:1.6rem;">
+        <a class="cta cta-primary" href="/projects/">View Projects</a>
+        <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- IMPACT -->
 <section class="snap-section impact">
   <div class="content-wrap">
-    <h1>End-to-end systems that ship</h1>
-    <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
+    <div class="card">
+      <h1>End-to-end systems that ship</h1>
+      <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
+      <div style="margin-top:1.6rem;">
+        <a class="cta cta-primary" href="/projects/">Explore the work</a>
+        <a class="cta cta-ghost" href="#hero">Back to top</a>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- FOCUS -->
 <section class="snap-section focus">
   <div class="content-wrap">
-    <h1>Practical impact today. Exploring tomorrow.</h1>
-    <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
-       <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
+    <div class="card">
+      <h1>Practical impact today. Exploring tomorrow.</h1>
+      <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
+         <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
+    </div>
   </div>
 </section>
 
