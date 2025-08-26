@@ -221,7 +221,7 @@ footer.site-footer {
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
     <h1>Reimagining the future through the language of data.</h1>
-    <h2>Data isn’t just numbers — it’s stories, systems, and signals. I work on turning it into something people can use.</h2>
+    <h2>Data isn’t just numbers — it’s stories, systems, and signals. I weaponize it into isights.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
       <a class="cta cta-ghost" href="#impact">See Results</a>
@@ -300,13 +300,13 @@ footer.site-footer {
     <p>
       I’m Aman Valera. My background is in <strong>Data Science</strong> and <strong>Machine Learning</strong>,  
       but what drives me is curiosity. I like asking not just <em>what happened</em>,  
-      but <em>why it happened</em> — and <em>what might happen next</em>.  
+      but <em>why it happened</em> - and <em>what might happen next</em>.  
       <br><br>
       That curiosity took me from designing BI dashboards to building predictive systems in <strong>sports analytics</strong>.  
-      Cricket, in particular, has been a space where I’ve combined passion with data — forecasting match outcomes, modeling momentum shifts, and showing how data can tell the story of a game.  
+      Cricket, in particular, has been a space where I’ve combined passion with data - forecasting match outcomes, modeling momentum shifts, and showing how data can tell the story of a game.  
       <br><br>
       Beyond sport, I explore how AI can mirror the complexity of nature, and how abstract models can be turned into practical tools.  
-      I see myself as a builder: someone who connects pipelines, models, and decisions into systems people can actually use.
+      I see myself as a builder: someone who connects pipelines, models, and decisions into systems people can actually use in order to solve their problems.
     </p>
   </div>
 </section>
