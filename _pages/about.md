@@ -30,9 +30,16 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar offset */
+/* Sidebar offset (desktop) */
 .sidebar {
   left: 2em;
+}
+
+/* Sidebar sticky (all screens, dynamic masthead offset) */
+.sidebar.sticky {
+  position: sticky !important;
+  top: var(--masthead-height, 0px); /* stick right under nav */
+  z-index: 1000;
 }
 
 /* Override theme .page layout on desktop */
