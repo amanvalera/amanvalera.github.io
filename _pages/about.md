@@ -30,7 +30,7 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
   
-/* Sidebar stays scrollable and clipped */
+/* Sidebar stays scrollable and clipped
 .sidebar {
   position: fixed !important;
   top: var(--masthead-height, 3.5rem);
@@ -47,9 +47,9 @@ header.page__header { display: none !important; }
   overflow: visible !important;
   z-index: 3000 !important;
   position: relative;
-}
+} */
   
-/* Sidebar default (desktop = fixed)
+/* Sidebar default (desktop = fixed)*/
 .sidebar {
   position: fixed !important;
   top: var(--masthead-height, 3.5rem);
@@ -60,9 +60,10 @@ header.page__header { display: none !important; }
   z-index: 100 !important; /* raise above snap-container */
   overflow: visible !important; /* allow dropdowns to escape */
 }
-.sidebar * {
+.sidebar .dropdown,
+.sidebar .dropdown * {
   overflow: visible !important; /* ensure nested dropdowns visible */
-} */
+} 
 
 /* Override body padding-bottom (remove 9em gap) */
 body {
