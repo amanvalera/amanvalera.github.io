@@ -7,12 +7,6 @@ author_profile: true
 ---
 
 <style>
-:root {
-  --masthead-height: 3.5rem;
-  --sidebar-width: 300px;
-  --gutter: 2rem;
-}
-
 /* Hide page title (kept for SEO) */
 .page-title,
 h1.page__title,
@@ -36,19 +30,28 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar */
+/* Sidebar default (desktop = fixed) */
 .sidebar {
   position: fixed !important;
-  top: var(--masthead-height);
+  top: var(--masthead-height, 3.5rem);
   left: 2em;
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--masthead-height));
+  width: var(--sidebar-width, 300px);
+  height: calc(100vh - var(--masthead-height, 3.5rem));
   overflow-y: auto;
   z-index: 100;
-  padding-top: var(--masthead-height);
 }
 
-/* Snap container */
+/* Desktop page layout */
+@media (min-width: 57.8125em) {
+  .page {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Snap scroll only on container */
 .snap-container {
   height: 100vh;
   overflow-y: scroll;
@@ -66,17 +69,16 @@ header.page__header { display: none !important; }
   align-items: center;
   scroll-snap-align: start;
   box-sizing: border-box;
-
-  /* ✅ uniform padding now, no sidebar offset */
-  padding: var(--masthead-height) var(--gutter);
+  padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
+  padding-right: var(--gutter, 2rem);
   color: #f5f5f5;
 }
 
-/* Inner content fills right side */
+/* Inner content */
 .content-wrap {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 1100px; /* wider than before */
   margin: 0;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -137,7 +139,7 @@ header.page__header { display: none !important; }
 @media (max-width: 768px) {
   .sidebar {
     position: sticky !important;
-    top: var(--masthead-height);
+    top: var(--masthead-height, 3.5rem);
     left: 0 !important;
     width: 100% !important;
     height: auto !important;
@@ -148,25 +150,41 @@ header.page__header { display: none !important; }
   }
 
   .snap-section {
-    padding: calc(var(--masthead-height) + 1rem) var(--gutter) !important;
+    padding-left: var(--gutter, 1rem) !important;
+    padding-right: var(--gutter, 1rem) !important;
+    padding-top: calc(var(--masthead-height, 3.5rem) + 1rem);
   }
 
   .content-wrap {
     max-width: 100%;
-    padding: 0 var(--gutter);
+    padding: 0 var(--gutter, 1rem);
   }
 }
 
-/* Kill empty meta block */
+/* Kill empty meta block that creates extra gap */
 .page__meta {
   display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Footer */
+/* Footer reset (NOT snapping) */
+.page__footer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 footer.site-footer {
+  min-height: auto;
+  scroll-snap-align: none !important;
   background: #111;
   color: #f5f5f5;
+  margin: 0 !important;
   padding: 2rem;
+}
+
+/* Override body padding-bottom (remove 9em gap) */
+body {
+  padding-bottom: 0 !important;
 }
 </style>
 
