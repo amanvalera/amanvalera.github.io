@@ -240,8 +240,8 @@ footer.site-footer {
         <p>Dashboards and SQL pipelines for real-time analysis. Power BI and Looker Studio supported.</p>
       </div>
       <div class="card">
-        <h2>Predictive Analytics and Statistical Modelling</h2>
-        <p>Machine learning for forecasting and strategy - applied across business and sport.</p>
+        <h2>Predictive and Statistical Modelling</h2>
+        <p>Predictive analytics and statistical modelling applied across industries, with expertise in business and sport.</p>
       </div>
       <div class="card">
         <h2>AI Research</h2>
