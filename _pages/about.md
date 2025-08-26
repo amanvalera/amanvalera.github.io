@@ -35,11 +35,13 @@ header.page__header { display: none !important; }
   left: 2em;
 }
 
-/* Sidebar sticky (all screens, dynamic masthead offset) */
+/* Make sidebar sticky under masthead */
 .sidebar.sticky {
   position: sticky !important;
-  top: var(--masthead-height, 0px); /* stick right under nav */
-  z-index: 1000;
+  top: var(--masthead-height, 60px); /* dynamically respects masthead height */
+  align-self: flex-start;
+  height: calc(100vh - var(--masthead-height, 60px));
+  overflow-y: auto;
 }
 
 /* Override theme .page layout on desktop */
@@ -53,11 +55,17 @@ header.page__header { display: none !important; }
 }
 
 /* Snap scroll container */
-.snap-container {
-  height: 100vh;
-  overflow-y: scroll;
+html, body {
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper (sections only, not scroll container anymore) */
+.snap-container {
+  height: auto;
+  overflow: visible;
   margin: 0;
   padding: 0;
 }
@@ -81,7 +89,7 @@ header.page__header { display: none !important; }
 /* Inner content */
 .content-wrap {
   max-width: 65ch;
-  margin: 0; /* no forced centering */
+  margin: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -124,6 +132,36 @@ header.page__header { display: none !important; }
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
   }
+  .sidebar.sticky {
+    top: var(--masthead-height, 60px);
+    width: 100% !important;
+    margin: 0;
+    padding: 1rem;
+    background: #111;
+    z-index: 1000;
+    border-radius: 0;
+  }
+}
+
+/* Footer participates in snap */
+footer.site-footer {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  background: #111;
+}
+
+/* Remove unwanted bottom spacing */
+.page {
+  margin-bottom: 0 !important;
+}
+.page__footer,
+footer.page__meta {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 </style>
 
