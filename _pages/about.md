@@ -237,11 +237,11 @@ footer.site-footer {
     <div class="grid grid-3" style="margin-top:1.5rem;">
       <div class="card">
         <h2>Business Intelligence</h2>
-        <p>Dashboards and SQL pipelines for real-time visibility. Power BI and Looker Studio supported.</p>
+        <p>Dashboards and SQL pipelines for real-time analysis. Power BI and Looker Studio supported.</p>
       </div>
       <div class="card">
-        <h2>Predictive Analytics</h2>
-        <p>Machine learning for forecasting and strategy — applied across business and sport.</p>
+        <h2>Predictive Analytics and Statistical Modelling</h2>
+        <p>Machine learning for forecasting and strategy - applied across business and sport.</p>
       </div>
       <div class="card">
         <h2>AI Research</h2>
