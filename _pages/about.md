@@ -12,10 +12,9 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
-/* Reset containers */
+/* Remove container restrictions */
 .page__inner-wrap,
-.page__content,
-#main {
+.page__content {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
@@ -23,44 +22,55 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar (desktop sticky, below masthead) */
-.sidebar.sticky {
-  position: sticky;
-  top: var(--masthead-height, 60px);
-  margin-left: 2em;
-  flex: 0 0 var(--sidebar-width, 320px);
-  height: calc(100vh - var(--masthead-height, 60px));
-  overflow-y: auto;
-  z-index: 10;
+#main {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
 }
 
-/* Snap scroll across whole page */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/* Sidebar offset (desktop) */
+.sidebar {
+  left: 2em;
+}
+
+/* Desktop page layout */
+@media (min-width: 57.8125em) {
+  .page {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Snap scroll only on container */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
+  margin: 0;
+  padding: 0;
 }
 
-/* Snap sections */
+/* Each section */
 .snap-section {
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
-  color: #f5f5f5;
-
   scroll-snap-align: start;
-  scroll-margin-top: var(--masthead-height, 60px);
+  box-sizing: border-box;
 
-  /* sidebar awareness on desktop */
+  /* sidebar awareness */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
+  color: #f5f5f5;
 }
 
-/* Content inside each section */
+/* Inner content */
 .content-wrap {
   max-width: 65ch;
   margin: 0;
@@ -95,43 +105,39 @@ html, body {
 .impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus    { background: #111; }
 
-/* Desktop layout: sidebar + content */
-@media (min-width: 57.8125em) {
-  #main {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .snap-container {
-    flex: 1;
-  }
-}
-
-/* Mobile layout */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .sidebar.sticky {
-    position: relative;
-    top: auto;
-    left: 0;
-    margin: 0;
+    position: sticky !important;
+    top: var(--masthead-height, 3.5rem);
+    left: 0 !important;
     width: 100% !important;
-    height: auto;
-    background: #111;
+    margin: 0;
     padding: 1rem;
-    border-radius: 0;
+    background: #111;
+    z-index: 1000;
   }
 
   .snap-section {
-    padding-top: 1rem;
-    padding-left: var(--gutter, 1rem);
-    padding-right: var(--gutter, 1rem);
+    padding-left: var(--gutter, 1rem) !important;
+    padding-right: var(--gutter, 1rem) !important;
+    padding-top: calc(var(--masthead-height, 3.5rem) + 1rem);
   }
 
   .content-wrap {
     max-width: 100%;
-    padding-left: var(--gutter, 1rem);
-    padding-right: var(--gutter, 1rem);
+    padding: 0 var(--gutter, 1rem);
   }
+}
+
+/* Footer reset (NOT snapping) */
+footer.site-footer {
+  min-height: auto;
+  scroll-snap-align: none !important;
+  background: #111;
+  color: #f5f5f5;
+  padding: 2rem;
+  margin: 0;
 }
 </style>
 
