@@ -63,12 +63,16 @@ html, body {
   align-items: center;
   scroll-snap-align: start;
   box-sizing: border-box;
+  color: #f5f5f5;
 
   /* sidebar awareness on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
+}
 
-  color: #f5f5f5;
+/* Force last section to lock before footer */
+.snap-section:last-of-type {
+  scroll-snap-stop: always;
 }
 
 /* Inner content */
