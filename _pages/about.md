@@ -221,7 +221,7 @@ footer.site-footer {
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
     <h1>Reimagining the future through the language of data.</h1>
-    <h2>Data isn’t just numbers. I weaponize it into isights.</h2>
+    <h2>I don't just analyse data. I weaponize it into insights.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
       <a class="cta cta-ghost" href="#impact">See Results</a>
