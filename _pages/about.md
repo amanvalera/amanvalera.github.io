@@ -30,15 +30,10 @@ header.page__header { display: none !important; }
   box-sizing: border-box;
 }
 
-/* Sidebar offset (desktop) */
-.sidebar {
-  left: 2em;
-}
-
-/* Make sidebar sticky under masthead */
+/* Sidebar sticky (desktop only) */
 .sidebar.sticky {
   position: sticky !important;
-  top: var(--masthead-height, 60px); /* dynamically respects masthead height */
+  top: var(--masthead-height, 60px);
   align-self: flex-start;
   height: calc(100vh - var(--masthead-height, 60px));
   overflow-y: auto;
@@ -62,7 +57,6 @@ html, body {
   padding: 0;
 }
 
-/* Wrapper (sections only, not scroll container anymore) */
 .snap-container {
   height: auto;
   overflow: visible;
@@ -70,7 +64,7 @@ html, body {
   padding: 0;
 }
 
-/* Each section takes full viewport */
+/* Each section */
 .snap-section {
   min-height: 100vh;
   width: 100%;
@@ -79,7 +73,7 @@ html, body {
   scroll-snap-align: start;
   box-sizing: border-box;
 
-  /* sidebar awareness on desktop */
+  /* sidebar offset on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
   padding-right: var(--gutter, 2rem);
 
@@ -121,25 +115,31 @@ html, body {
 .impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus    { background: #111; }
 
-/* Mobile-friendly layout */
+/* Mobile layout fixes */
 @media (max-width: 768px) {
-  .snap-section {
-    padding-left: var(--gutter, 1rem);
-    padding-right: var(--gutter, 1rem);
+  .sidebar.sticky {
+    position: relative !important; /* no sticky on mobile */
+    top: auto;
+    left: auto;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible;
+    margin: 0 0 1rem 0; /* put it above sections */
+    padding: 1rem;
+    background: #111;
+    border-radius: 0;
   }
+
+  .snap-section {
+    padding-left: var(--gutter, 1rem) !important;
+    padding-right: var(--gutter, 1rem) !important;
+    padding-top: 1rem;
+  }
+
   .content-wrap {
     max-width: 100%;
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
-  }
-  .sidebar.sticky {
-    top: var(--masthead-height, 60px);
-    width: 100% !important;
-    margin: 0;
-    padding: 1rem;
-    background: #111;
-    z-index: 1000;
-    border-radius: 0;
   }
 }
 
