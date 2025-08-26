@@ -40,7 +40,7 @@ header.page__header { display: none !important; }
   .page {
     width: 100% !important;
     float: none !important;
-    margin: 0 !important;   /* remove bottom margin */
+    margin: 0 !important;
     padding: 0 !important;
   }
 }
@@ -73,7 +73,7 @@ header.page__header { display: none !important; }
 /* Inner content */
 .content-wrap {
   max-width: 65ch;
-  margin: 0; /* no extra margins */
+  margin: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -130,9 +130,16 @@ header.page__header { display: none !important; }
   }
 }
 
+/* Kill empty meta block that creates extra gap */
+.page__meta {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Footer reset (NOT snapping) */
 .page__footer {
-  margin: 0 !important;    /* remove top/bottom margins */
+  margin: 0 !important;
   padding: 0 !important;
 }
 footer.site-footer {
@@ -140,8 +147,8 @@ footer.site-footer {
   scroll-snap-align: none !important;
   background: #111;
   color: #f5f5f5;
-  margin: 0 !important;    /* no margins */
-  padding: 2rem;           /* only padding for spacing */
+  margin: 0 !important;
+  padding: 2rem;
 }
 </style>
 
@@ -186,5 +193,4 @@ footer.site-footer {
        <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
   </div>
 </section>
-
 </div>
