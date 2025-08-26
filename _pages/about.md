@@ -69,24 +69,30 @@ header.page__header { display: none !important; }
   align-items: center;
   scroll-snap-align: start;
   box-sizing: border-box;
-
-  /* sidebar awareness */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
-  padding-right: 0 !important; /* 🔥 remove purple gap */
+  padding-right: var(--gutter, 2rem);
   color: #f5f5f5;
 }
 
 /* Inner content */
 .content-wrap {
-  max-width: 65ch;
+  max-width: 1100px; /* wider than before */
   margin: 0;
   width: 100%;
   box-sizing: border-box;
 }
 
 /* Typography */
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: .5rem;
+}
 .content-wrap h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
@@ -121,14 +127,6 @@ header.page__header { display: none !important; }
 }
 .cta-primary { background: #9b87f5; color: #0e0a21; }
 .cta-ghost { border: 1px solid #444; color: #f5f5f5; margin-left: .5rem; }
-
-/* Kill card look */
-.card { 
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
 
 /* Section gradients */
 .hero     { background: radial-gradient(circle at 75% 20%, #2c2655 0%, transparent 70%) #111; }
@@ -193,8 +191,9 @@ body {
 <div class="snap-container">
 
 <!-- HERO -->
-<section class="snap-section hero">
+<section class="snap-section hero" id="hero">
   <div class="content-wrap">
+    <div class="kicker">AMAN VALERA</div>
     <h1>Reimagining the future through the language of data.</h1>
     <h2>I don’t just analyze it — I transform it into insight.</h2>
     <div style="margin-top:1.6rem;">
@@ -207,17 +206,18 @@ body {
 <!-- SERVICES -->
 <section class="snap-section services" id="services">
   <div class="content-wrap">
+    <div class="kicker">Services</div>
     <h1>What I deliver</h1>
     <div class="grid grid-3" style="margin-top:1.1rem;">
-      <div class="card">
+      <div>
         <h2>Business Intelligence</h2>
         <p>Dashboards, SQL data models, Power BI, Looker Studio</p>
       </div>
-      <div class="card">
+      <div>
         <h2>Predictive Analytics</h2>
         <p>End-to-end ML systems, sports forecasting (e.g. IPL win predictions)</p>
       </div>
-      <div class="card">
+      <div>
         <h2>Frontier AI Research</h2>
         <p>Deep Learning, Agentic AI, Biologically Inspired Computation</p>
       </div>
@@ -230,8 +230,9 @@ body {
 </section>
 
 <!-- ABOUT -->
-<section class="snap-section about">
+<section class="snap-section about" id="about">
   <div class="content-wrap">
+    <div class="kicker">Identity</div>
     <h1>I’m a Data Scientist &amp; Machine Learning Engineer</h1>
     <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
     <div style="margin-top:1.6rem;">
@@ -242,8 +243,9 @@ body {
 </section>
 
 <!-- IMPACT -->
-<section class="snap-section impact">
+<section class="snap-section impact" id="impact">
   <div class="content-wrap">
+    <div class="kicker">Impact</div>
     <h1>End-to-end systems that ship</h1>
     <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
     <div style="margin-top:1.6rem;">
@@ -254,8 +256,9 @@ body {
 </section>
 
 <!-- FOCUS -->
-<section class="snap-section focus">
+<section class="snap-section focus" id="focus">
   <div class="content-wrap">
+    <div class="kicker">Focus</div>
     <h1>Practical impact today. Exploring tomorrow.</h1>
     <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
        <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
