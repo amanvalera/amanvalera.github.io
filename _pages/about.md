@@ -32,7 +32,7 @@ header.page__header { display: none !important; }
 
 /* Sidebar base */
 .sidebar {
-  left: 2em; /* small offset from edge */
+  left: 2em;
 }
 
 /* Full-page snap scroll */
@@ -44,7 +44,7 @@ html, body {
   overscroll-behavior-y: contain;
 }
 
-/* Container is just a wrapper, not scrollable */
+/* Snap container just a wrapper */
 .snap-container {
   height: auto;
   overflow: visible;
@@ -52,7 +52,7 @@ html, body {
   padding: 0;
 }
 
-/* Snap targets */
+/* Snap targets (sections + footer) */
 .snap-section,
 footer.site-footer {
   min-height: 100vh;
@@ -64,7 +64,7 @@ footer.site-footer {
 
   /* snap behavior */
   scroll-snap-align: start;
-  scroll-margin-top: var(--masthead-height, 60px); /* prevent hiding under nav */
+  scroll-margin-top: var(--masthead-height, 60px);
 
   /* sidebar awareness on desktop */
   padding-left: calc(var(--sidebar-width, 320px) + var(--gutter, 2rem));
@@ -106,7 +106,7 @@ footer.site-footer {
 .impact   { background: radial-gradient(circle at 20% 80%, #5a2f3b 0%, transparent 70%) #111; }
 .focus    { background: #111; }
 
-/* Desktop sidebar sticky beside content */
+/* Desktop layout */
 @media (min-width: 57.8125em) {
   #main {
     display: flex;
@@ -128,18 +128,19 @@ footer.site-footer {
   }
 }
 
-/* Mobile-friendly layout */
+/* Mobile layout */
 @media (max-width: 768px) {
   .sidebar.sticky {
-    position: relative;   /* no sticky on mobile */
+    position: relative;
     top: auto;
     margin: 0;
     width: 100%;
-    background: #111; /* optional */
+    background: #111;
     z-index: 1000;
   }
 
-  .snap-section {
+  .snap-section,
+  footer.site-footer {
     padding-top: 1rem;
     padding-left: var(--gutter, 1rem);
     padding-right: var(--gutter, 1rem);
@@ -154,13 +155,11 @@ footer.site-footer {
 
 /* Footer styling */
 footer.site-footer {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: #f5f5f5;
   background: #111;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 2rem !important;
+  text-align: center;
 }
 </style>
 
@@ -205,5 +204,9 @@ footer.site-footer {
        <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
   </div>
 </section>
+
+<footer class="site-footer">
+  <p>© 2025 Aman Valera — All rights reserved.</p>
+</footer>
 
 </div>
