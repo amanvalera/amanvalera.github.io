@@ -221,7 +221,7 @@ footer.site-footer {
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
     <h1>Reimagining the future through the language of data.</h1>
-    <h2>Data isn’t just numbers — it’s stories, systems, and signals. I weaponize it into isights.</h2>
+    <h2>Data isn’t just numbers. I weaponize it into isights.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
       <a class="cta cta-ghost" href="#impact">See Results</a>
@@ -261,7 +261,7 @@ footer.site-footer {
     <div class="kicker">Identity</div>
     <h1>Clarity from data</h1>
     <p>I work across <strong>sports analytics</strong> and <strong>business intelligence</strong>. 
-       From pipelines to models to dashboards, I connect every layer into systems that support real decisions.</p>
+       From pipelines to models to dashboards, I connect every layer into systems that support decisions.</p>
   </div>
 </section>
 
