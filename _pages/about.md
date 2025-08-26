@@ -163,5 +163,3 @@ header.page__header { display: none !important; }
 </section>
 
 </div>
-
-Without changing anything can we put the sections into the main page for seamless scrolling to footer
