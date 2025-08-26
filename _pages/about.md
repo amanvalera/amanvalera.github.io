@@ -231,8 +231,8 @@ body {
 <section class="snap-section hero" id="hero">
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
-    <h1>Reimagining the future through the language of data.</h1>
-    <h2>I don’t just analyze it — I transform it into insight.</h2>
+    <h1>I don’t just analyze data. I turn it into decisions.</h1>
+    <h2>From sports to business, I build systems that explain the present and predict what’s ahead.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
       <a class="cta cta-ghost" href="#impact">See Results</a>
@@ -249,15 +249,15 @@ body {
     <div class="grid grid-3" style="margin-top:1.5rem;">
       <div class="card">
         <h2>Business Intelligence</h2>
-        <p>Dashboards, SQL data models, Power BI, Looker Studio</p>
+        <p>Dashboards and SQL pipelines that give leaders a clear view of performance. Power BI and Looker Studio included.</p>
       </div>
       <div class="card">
         <h2>Predictive Analytics</h2>
-        <p>End-to-end ML systems, sports forecasting (e.g. IPL win predictions)</p>
+        <p>Machine learning that drives strategy — including <strong>84% F1 accuracy</strong> on IPL predictions.</p>
       </div>
       <div class="card">
-        <h2>Frontier AI Research</h2>
-        <p>Deep Learning, Agentic AI, Biologically Inspired Computation</p>
+        <h2>AI Research</h2>
+        <p>Exploring agentic systems, deep learning, and biologically inspired methods for the next generation of analytics.</p>
       </div>
     </div>
 
@@ -272,8 +272,8 @@ body {
 <section class="snap-section about" id="about">
   <div class="content-wrap">
     <div class="kicker">Identity</div>
-    <h1>I’m a Data Scientist &amp; Machine Learning Engineer</h1>
-    <p>Expertise in <strong>sports analytics</strong> and <strong>business intelligence</strong> — bridging pipelines, models, and product to deliver clarity.</p>
+    <h1>Clarity from data</h1>
+    <p>I work across <strong>sports analytics</strong> and <strong>business intelligence</strong>. From pipelines to models to dashboards, I connect every layer into systems that support real decisions.</p>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="/projects/">View Projects</a>
       <a class="cta cta-ghost" href="mailto:youremail@example.com">Contact</a>
@@ -285,8 +285,10 @@ body {
 <section class="snap-section impact" id="impact">
   <div class="content-wrap">
     <div class="kicker">Impact</div>
-    <h1>End-to-end systems that ship</h1>
-    <p>From SQL pipelines and dashboards to predictive ML models — including an <strong>84% F1</strong> in live IPL match predictions.</p>
+    <h1>Results</h1>
+    <p>⚡ SQL pipelines and dashboards in production.<br>
+       ⚡ Live predictive models delivering <strong>84% F1</strong> during IPL matches.<br>
+       ⚡ Research applied in working systems, not just theory.</p>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="/projects/">Explore the work</a>
       <a class="cta cta-ghost" href="#hero">Back to top</a>
@@ -298,9 +300,9 @@ body {
 <section class="snap-section focus" id="focus">
   <div class="content-wrap">
     <div class="kicker">Focus</div>
-    <h1>Practical impact today. Exploring tomorrow.</h1>
-    <p><strong>Practical today</strong> — analytics pipelines, dashboards, and models that drive decisions.<br>
-       <strong>Exploring tomorrow</strong> — agentic approaches, biologically inspired computation, and statistical modeling.</p>
+    <h1>Now and next</h1>
+    <p><strong>Now:</strong> dashboards, pipelines, and predictive models used every day.<br>
+       <strong>Next:</strong> adaptive intelligence and agentic AI expanding how decisions are made.</p>
   </div>
 </section>
 
