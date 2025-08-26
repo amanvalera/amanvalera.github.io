@@ -12,6 +12,12 @@ author_profile: true
 h1.page__title,
 header.page__header { display: none !important; }
 
+/* Remove injected body spacing */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Remove container restrictions */
 .page__inner-wrap,
 .page__content {
@@ -40,7 +46,7 @@ header.page__header { display: none !important; }
   .page {
     width: 100% !important;
     float: none !important;
-    margin: 0 0 2rem 0 !important; /* bottom margin added */
+    margin: 0 !important;
     padding: 0 !important;
   }
 }
@@ -130,14 +136,16 @@ header.page__header { display: none !important; }
   }
 }
 
-/* Footer reset (NOT snapping) */
-footer.site-footer {
-  min-height: auto;
-  scroll-snap-align: none !important;
+/* Footer reset */
+.page__footer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.page__footer footer {
+  margin: 0 !important;
+  padding: 2rem !important; /* inner breathing space */
   background: #111;
   color: #f5f5f5;
-  padding: 2rem;
-  margin: 2rem 0 0 0; /* top margin added */
 }
 </style>
 
