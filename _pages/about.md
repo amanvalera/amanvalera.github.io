@@ -224,7 +224,7 @@ footer.site-footer {
 <section class="snap-section hero" id="hero">
   <div class="content-wrap">
     <div class="kicker">AMAN VALERA</div>
-    <h1>I don’t just analyze data. I weaponize it into insights</h1>
+    <h1>I don’t just analyze data. <br> I weaponize it into insights</h1>
     <h2>From sports to business, I build systems that explain the present and predict what’s ahead.</h2>
     <div style="margin-top:1.6rem;">
       <a class="cta cta-primary" href="#services">See Services</a>
