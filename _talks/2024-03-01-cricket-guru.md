@@ -12,21 +12,20 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 <!-- 📸 Simple image slider using radio buttons -->
 <div class="slider">
 
-  <input type="radio" name="slide" id="slide1" checked>
-  <input type="radio" name="slide" id="slide2">
+  <input type="radio" name="slide" id="s1" checked>
+  <input type="radio" name="slide" id="s2">
+  <input type="radio" name="slide" id="s3">
 
   <div class="slides">
-    <div class="slide">
-      <img src="/images/talks-slide1.jpg" alt="Cricket Guru Presentation 1">
-    </div>
-    <div class="slide">
-      <img src="/images/talks-slide2.jpg" alt="Cricket Guru Presentation 2">
-    </div>
+    <div class="slide"><img src="/images/talks-slide1.jpg" alt=""></div>
+    <div class="slide"><img src="/images/talks-slide2.jpg" alt=""></div>
+    <div class="slide"><img src="/images/talks-slide3.jpg" alt=""></div>
   </div>
 
-  <div class="navigation">
-    <label for="slide1" class="bar"></label>
-    <label for="slide2" class="bar"></label>
+  <div class="nav">
+    <label for="s1" class="bar"></label>
+    <label for="s2" class="bar"></label>
+    <label for="s3" class="bar"></label>
   </div>
 </div>
 
@@ -39,18 +38,23 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 }
 .slides {
   display: flex;
-  overflow: hidden;
+  width: 300%;
+  transition: 0.6s;
 }
 .slide {
-  min-width: 100%;
-  transition: 0.5s;
+  width: 100%;
+  flex-shrink: 0;
 }
 .slide img {
   width: 100%;
   max-height: 500px;
   object-fit: cover;
 }
-.navigation {
+input[type=radio] { display: none; }
+#s1:checked ~ .slides { transform: translateX(0); }
+#s2:checked ~ .slides { transform: translateX(-100%); }
+#s3:checked ~ .slides { transform: translateX(-200%); }
+.nav {
   text-align: center;
   margin-top: 10px;
 }
@@ -63,16 +67,13 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   border-radius: 50%;
   display: inline-block;
 }
-input[type=radio] {
-  display: none;
-}
-#slide1:checked ~ .slides { transform: translateX(0%); }
-#slide2:checked ~ .slides { transform: translateX(-100%); }
-#slide1:checked ~ .navigation label[for=slide1],
-#slide2:checked ~ .navigation label[for=slide2] {
+input#s1:checked ~ .nav label[for=s1],
+input#s2:checked ~ .nav label[for=s2],
+input#s3:checked ~ .nav label[for=s3] {
   background: #717171;
 }
 </style>
+
 
 ---
 
