@@ -13,11 +13,11 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 <div class="slideshow-container">
 
   <div class="mySlides fade">
-    <img src="/images/talks-slide1.jpg" style="width:100%">
+    <img src="/images/talks-slide2.jpg" alt="Cricket Guru Presentation 1">
   </div>
 
   <div class="mySlides fade">
-    <img src="/images/talks-slide2.jpg" style="width:100%">
+    <img src="/images/talks-slide1.jpg" alt="Cricket Guru Presentation 2">
   </div>
 
   <!-- Navigation arrows -->
@@ -32,8 +32,6 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
 </div>
-
----
 
 ## The Challenge  
 How can we predict the winner of an IPL match **while the game is still live**?  
@@ -75,7 +73,7 @@ Python · Scikit-learn · Pandas · NumPy · Streamlit · SQL · Matplotlib
   </a>
 </div>
 
-<!-- JS + CSS for slideshow -->
+{% raw %}
 <script>
 let slideIndex = 0;
 showSlides();
@@ -107,6 +105,7 @@ function currentSlide(n) {
   showSlides();
 }
 </script>
+{% endraw %}
 
 <style>
 .slideshow-container {
@@ -116,6 +115,11 @@ function currentSlide(n) {
 }
 .mySlides {
   display: none;
+}
+.mySlides img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
 }
 .prev, .next {
   cursor: pointer;
