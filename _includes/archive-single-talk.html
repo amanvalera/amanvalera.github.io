@@ -17,16 +17,18 @@
 
     <!-- ✅ Always show teaser (even in list mode) -->
     {% if teaser %}
-      <div class="archive__item-teaser" style="max-width:140px;float:left;margin-right:1rem;">
+      <div class="archive__item-teaser" style="max-width:900px; margin:1rem 0;">
         <img src=
           {% if teaser contains "://" %}
             "{{ teaser }}"
           {% else %}
             "{{ teaser | prepend: "/images/" | prepend: base_path }}"
           {% endif %}
-          alt="{{ title }}" style="border-radius:6px;">
+          alt=""
+          style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
       </div>
     {% endif %}
+
 
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
