@@ -29,10 +29,10 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 
 <style>
 .slider-wrapper {
-  max-width: 800px;   /* contain width */
-  margin: 2rem auto;  /* center on page */
+  max-width: 800px;       /* contain width */
+  margin: 2rem auto;      /* center on page */
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden;       /* clip corners */
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   background: #000;
 }
@@ -50,9 +50,9 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   flex-shrink: 0;
 }
 .slide img {
-  width: 100%;
-  max-height: 450px;
-  object-fit: cover;
+  width: 100%;       /* responsive width */
+  height: auto;      /* dynamic height */
+  object-fit: contain; /* fit inside without cropping */
   display: block;
 }
 input[type=radio] {display: none;}
