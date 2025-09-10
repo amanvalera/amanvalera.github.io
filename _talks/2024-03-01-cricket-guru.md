@@ -32,7 +32,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   position: relative;
   max-width: 900px;
   margin: 2rem auto;
-  aspect-ratio: 16/9;    /* Apple-style responsive ratio */
+  aspect-ratio: 4/3;    /* Apple-style responsive ratio */
   background: #000;
   border-radius: 12px;
   overflow: hidden;
