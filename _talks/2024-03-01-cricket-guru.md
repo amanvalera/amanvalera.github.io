@@ -64,8 +64,8 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   position: absolute;
   top: 50%;
   transform: translateY(-50%);   /* center vertically */
-  width: 6%;                     /* % of container width */
-  height: 6%;                    /* same for height → square */
+  width: 5px;                     /* % of container width */
+  height: 5px;                    /* same for height → square */
   display: flex;
   align-items: center;
   justify-content: center;
