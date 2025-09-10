@@ -55,14 +55,17 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;  /* black fill behind images */
+  background: #000; /* black bars */
 }
+
 .slide img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* ✅ no cropping, adds black bars */
+  width: 100%;         /* always fill width */
+  height: auto;        /* preserve aspect ratio */
+  max-height: 100%;    /* never overflow vertically */
+  object-fit: scale-down; /* shrink if needed, no crop */
   display: block;
 }
+
 input[type=radio] {display: none;}
 #s1:checked ~ .slides {transform: translateX(0);}
 #s2:checked ~ .slides {transform: translateX(-100%);}
