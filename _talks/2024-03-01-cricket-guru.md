@@ -34,30 +34,31 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   height: 450px;
   margin: 2rem auto;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden;        /* clip images */
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   background: #000;
+  position: relative;      /* needed for dots */
 }
-.slider {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+
 .slides {
   display: flex;
-  width: 200%;   /* 2 slides */
+  width: 200%;             /* for 2 slides */
   height: 100%;
   transition: transform 0.6s ease;
+  border-radius: 12px;     /* clip flex area */
+  overflow: hidden;
 }
+
 .slide {
   width: 100%;
   height: 100%;
   flex-shrink: 0;
 }
+
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fill container, crop edges */
+  object-fit: cover;       /* fill nicely, crop if needed */
   display: block;
 }
 input[type=radio] {display: none;}
