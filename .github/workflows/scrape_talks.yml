@@ -6,6 +6,9 @@ on:
       - 'talks/**'
       - '_talks/**'
       - 'talkmap.ipynb'
+      
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -29,6 +32,8 @@ jobs:
         jupyter nbconvert --to notebook --execute talkmap.ipynb --output talkmap_out.ipynb
 
     - name: Commit changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 👈 authenticate with token
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
