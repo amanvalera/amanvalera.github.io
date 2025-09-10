@@ -17,8 +17,8 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   </div>
 
   <!-- arrows -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+  <div class="next" onclick="plusSlides(1)">&#10095;</div>
 
   <!-- dots -->
   <div class="dots">
