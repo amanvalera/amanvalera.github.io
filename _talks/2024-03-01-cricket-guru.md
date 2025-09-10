@@ -20,7 +20,6 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
       <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
     </div>
 
-    <!-- dots -->
     <div class="nav">
       <label for="s1" class="bar"></label>
       <label for="s2" class="bar"></label>
@@ -31,34 +30,37 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 <style>
 .slider-wrapper {
   max-width: 800px;
-  height: 450px;
+  height: 450px;      /* fixed container size */
   margin: 2rem auto;
   border-radius: 12px;
-  overflow: hidden;        /* clip images */
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  background: #000;
-  position: relative;      /* needed for dots */
+  background: #000;   /* black bars */
 }
-
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 .slides {
   display: flex;
-  width: 200%;             /* for 2 slides */
+  width: 200%;
   height: 100%;
-  transition: transform 0.6s ease;
-  border-radius: 12px;     /* clip flex area */
-  overflow: hidden;
+  transition: 0.6s;
 }
-
 .slide {
   width: 100%;
   height: 100%;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;  /* black fill behind images */
 }
-
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* fill nicely, crop if needed */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ✅ no cropping, adds black bars */
   display: block;
 }
 input[type=radio] {display: none;}
@@ -66,9 +68,8 @@ input[type=radio] {display: none;}
 #s2:checked ~ .slides {transform: translateX(-100%);}
 .nav {
   text-align: center;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+  padding: 10px;
+  background: #222;
 }
 .bar {
   cursor: pointer;
@@ -85,7 +86,6 @@ input[type=radio] {display: none;}
   background: #717171;
 }
 </style>
-
 ---
 
 ## The Challenge  
