@@ -40,7 +40,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 }
 .slides {
   display: flex;
-  width: 200%; /* for 2 slides */
+  width: 100%; /* for 2 slides */
   height: 100%;
   transition: transform 0.6s ease;
 }
