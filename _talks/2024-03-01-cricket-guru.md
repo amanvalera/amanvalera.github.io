@@ -9,86 +9,127 @@ location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
 ---
 
-<!-- 📸 Slideshow -->
+<!-- 📸 Apple-style slideshow -->
 <div class="slider-wrapper">
-  <div class="slider">
-    <input type="radio" name="slide" id="s1" checked>
-    <input type="radio" name="slide" id="s2">
+  <div class="slides">
+    <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
+  </div>
 
-    <div class="slides">
-      <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
-      <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
-    </div>
+  <!-- arrows -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-    <div class="nav">
-      <label for="s1" class="bar"></label>
-      <label for="s2" class="bar"></label>
-    </div>
+  <!-- dots -->
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
   </div>
 </div>
 
 <style>
 .slider-wrapper {
-  max-width: 800px;
-  height: 450px;      /* fixed container size */
+  position: relative;
+  max-width: 900px;
   margin: 2rem auto;
+  aspect-ratio: 16/9;    /* Apple-style responsive ratio */
+  background: #000;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  background: #000;   /* black bars */
-}
-.slider {
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
 .slides {
   display: flex;
-  width: 200%;
-  height: 100%;
-  transition: 0.6s;
-}
-.slide {
   width: 100%;
   height: 100%;
-  flex-shrink: 0;
+  transition: transform 0.6s ease;
+}
+.slide {
+  min-width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #000; /* black bars */
+  align-items: center;
+  background: #000;
 }
-
 .slide img {
-  width: 100%;         /* always fill width */
-  height: auto;        /* preserve aspect ratio */
-  max-height: 100%;    /* never overflow vertically */
-  object-fit: scale-down; /* shrink if needed, no crop */
-  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* never crop, show black bars if needed */
 }
 
-input[type=radio] {display: none;}
-#s1:checked ~ .slides {transform: translateX(0);}
-#s2:checked ~ .slides {transform: translateX(-100%);}
-.nav {
-  text-align: center;
-  padding: 10px;
-  background: #222;
+/* arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  user-select: none;
 }
-.bar {
+.next { right: 10px; }
+.prev { left: 10px; }
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* dots */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+}
+.dot {
   cursor: pointer;
   height: 12px;
   width: 12px;
-  margin: 0 5px;
-  background: #bbb;
+  margin: 0 4px;
+  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.3s;
+  transition: background-color 0.6s;
 }
-#s1:checked ~ .nav label[for=s1],
-#s2:checked ~ .nav label[for=s2] {
-  background: #717171;
+.active, .dot:hover {
+  background-color: #717171;
 }
 </style>
+
+{% raw %}
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) { showSlides(slideIndex += n); }
+function currentSlide(n) { showSlides(slideIndex = n); }
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "flex";  
+  dots[slideIndex-1].className += " active";
+}
+
+// auto-play like Apple
+setInterval(() => { plusSlides(1); }, 5000);
+</script>
+{% endraw %}
 ---
 
 ## The Challenge  
