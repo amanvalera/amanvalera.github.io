@@ -63,19 +63,24 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
+  transform: translateY(-50%);   /* center vertically */
+  width: 6%;                     /* % of container width */
+  height: 6%;                    /* same for height → square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 2vw;                 /* scale with container width */
   transition: 0.3s;
-  border-radius: 50%;
+  border-radius: 50%;             /* stays circular */
   background: rgba(0,0,0,0.4);
   user-select: none;
 }
-.next { right: 10px; }
-.prev { left: 10px; }
+
+.prev { left: 2%; }
+.next { right: 2%; }
+
 .prev:hover, .next:hover {
   background: rgba(0,0,0,0.8);
 }
