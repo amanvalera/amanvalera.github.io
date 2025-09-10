@@ -7,6 +7,8 @@ venue: "Heriot-Watt University Student Showcase 2024"
 date: 2024-05-03
 location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
+header:
+  teaser: HWU-global-logo.jpg
 ---
 
 <!-- 📸 Simple manual slider -->
