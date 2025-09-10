@@ -54,9 +54,11 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   flex-shrink: 0;
 }
 .slide img {
-  width: 100%;          /* 🔑 force image to fill box */
-  object-fit: cover;     /* crop edges but keep aspect */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* show full image, even if black bars */
   display: block;
+  background: #000;     /* optional: black letterbox background */
 }
 input[type=radio] {display: none;}
 #s1:checked ~ .slides {transform: translateX(0);}
