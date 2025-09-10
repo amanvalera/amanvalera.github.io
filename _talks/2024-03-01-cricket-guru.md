@@ -32,7 +32,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   position: relative;
   max-width: 900px;
   margin: 2rem auto;
-  aspect-ratio: 4/3;    /* Apple-style responsive ratio */
+  aspect-ratio: 4/3;     /* responsive 4:3 container */
   background: #000;
   border-radius: 12px;
   overflow: hidden;
@@ -55,7 +55,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 .slide img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;  /* never crop, show black bars if needed */
+  object-fit: contain;   /* no crop, black bars if needed */
 }
 
 /* arrows */
@@ -63,26 +63,30 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   cursor: pointer;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);   /* center vertically */
-  width: 5px;                     /* % of container width */
-  height: 5px;                    /* same for height → square */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: bold;
-  font-size: 2vw;                 /* scale with container width */
-  transition: 0.3s;
-  border-radius: 50%;             /* stays circular */
+  font-size: 20px;
+  transition: opacity 0.4s, background 0.3s;
+  border-radius: 50%;
   background: rgba(0,0,0,0.4);
   user-select: none;
 }
-
-.prev { left: 2%; }
-.next { right: 2%; }
-
+.prev { left: 10px; }
+.next { right: 10px; }
 .prev:hover, .next:hover {
   background: rgba(0,0,0,0.8);
+}
+
+/* hidden arrows */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* dots */
@@ -116,23 +120,46 @@ function plusSlides(n) { showSlides(slideIndex += n); }
 function currentSlide(n) { showSlides(slideIndex = n); }
 
 function showSlides(n) {
-  let i;
   let slides = document.getElementsByClassName("slide");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+  let prev = document.querySelector(".prev");
+  let next = document.querySelector(".next");
+
+  if (n > slides.length) { slideIndex = slides.length; }
+  if (n < 1) { slideIndex = 1; }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (let i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "flex";  
+
+  slides[slideIndex-1].style.display = "flex";
   dots[slideIndex-1].className += " active";
+
+  // fade arrows depending on position
+  if (slideIndex === 1) {
+    prev.classList.add("hidden");
+  } else {
+    prev.classList.remove("hidden");
+  }
+  if (slideIndex === slides.length) {
+    next.classList.add("hidden");
+  } else {
+    next.classList.remove("hidden");
+  }
 }
 
 // auto-play like Apple
-setInterval(() => { plusSlides(1); }, 5000);
+setInterval(() => { 
+  if (slideIndex < document.getElementsByClassName("slide").length) {
+    plusSlides(1);
+  } else {
+    slideIndex = 1;
+    showSlides(slideIndex);
+  }
+}, 5000);
 </script>
 {% endraw %}
 ---
