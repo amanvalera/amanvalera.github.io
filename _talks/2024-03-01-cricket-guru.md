@@ -9,27 +9,35 @@ location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
 ---
 
-<!-- 📸 CSS-only slideshow -->
-<div class="slider">
-  <input type="radio" name="slide" id="s1" checked>
-  <input type="radio" name="slide" id="s2">
+<!-- 📸 Contained slideshow -->
+<div class="slider-wrapper">
+  <div class="slider">
+    <input type="radio" name="slide" id="s1" checked>
+    <input type="radio" name="slide" id="s2">
 
-  <div class="slides">
-    <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
-  </div>
+    <div class="slides">
+      <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
+      <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
+    </div>
 
-  <div class="nav">
-    <label for="s1" class="bar"></label>
-    <label for="s2" class="bar"></label>
+    <div class="nav">
+      <label for="s1" class="bar"></label>
+      <label for="s2" class="bar"></label>
+    </div>
   </div>
 </div>
 
 <style>
+.slider-wrapper {
+  max-width: 800px;   /* contain width */
+  margin: 2rem auto;  /* center on page */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background: #000;
+}
 .slider {
   width: 100%;
-  max-width: 800px;
-  margin: auto;
   position: relative;
 }
 .slides {
@@ -43,27 +51,30 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 }
 .slide img {
   width: 100%;
-  max-height: 500px;
+  max-height: 450px;
   object-fit: cover;
+  display: block;
 }
 input[type=radio] {display: none;}
 #s1:checked ~ .slides {transform: translateX(0);}
 #s2:checked ~ .slides {transform: translateX(-100%);}
 .nav {
   text-align: center;
-  margin-top: 10px;
+  padding: 10px;
+  background: #222;
 }
 .bar {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 5px;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
   background: #bbb;
   border-radius: 50%;
   display: inline-block;
+  transition: background-color 0.3s;
 }
-input#s1:checked ~ .nav label[for=s1],
-input#s2:checked ~ .nav label[for=s2] {
+#s1:checked ~ .nav label[for=s1],
+#s2:checked ~ .nav label[for=s2] {
   background: #717171;
 }
 </style>
