@@ -9,7 +9,7 @@ location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
 ---
 
-<!-- 📸 Apple-style slideshow -->
+<!-- 📸 Simple manual slider -->
 <div class="slider-wrapper">
   <div class="slides">
     <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
@@ -40,12 +40,12 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 }
 .slides {
   display: flex;
-  width: 100%;
+  width: 200%; /* 2 slides */
   height: 100%;
   transition: transform 0.6s ease;
 }
 .slide {
-  min-width: 100%;
+  flex: 0 0 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 .slide img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;   /* no crop, black bars if needed */
+  object-fit: contain;
 }
 
 /* arrows */
@@ -70,24 +70,16 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: bold;
   font-size: 20px;
-  transition: opacity 0.4s, background 0.3s;
   border-radius: 50%;
   background: rgba(0,0,0,0.4);
+  transition: background 0.3s, opacity 0.4s;
   user-select: none;
 }
 .prev { left: 10px; }
 .next { right: 10px; }
-.prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-/* hidden arrows */
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.prev:hover, .next:hover { background: rgba(0,0,0,0.8); }
+.hidden { opacity: 0; pointer-events: none; }
 
 /* dots */
 .dots {
@@ -106,60 +98,41 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   display: inline-block;
   transition: background-color 0.6s;
 }
-.active, .dot:hover {
-  background-color: #717171;
-}
+.active, .dot:hover { background-color: #717171; }
 </style>
 
 {% raw %}
 <script>
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = 0;
+const slides = document.querySelector(".slides");
+const totalSlides = document.getElementsByClassName("slide").length;
+const dots = document.getElementsByClassName("dot");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
-function plusSlides(n) { showSlides(slideIndex += n); }
-function currentSlide(n) { showSlides(slideIndex = n); }
-
-function showSlides(n) {
-  let slides = document.getElementsByClassName("slide");
-  let dots = document.getElementsByClassName("dot");
-  let prev = document.querySelector(".prev");
-  let next = document.querySelector(".next");
-
-  if (n > slides.length) { slideIndex = slides.length; }
-  if (n < 1) { slideIndex = 1; }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+function updateSlides() {
+  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
   for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i]
+      .className = dots[i].className.replace(" active", "");
   }
-
-  slides[slideIndex-1].style.display = "flex";
-  dots[slideIndex-1].className += " active";
-
-  // fade arrows depending on position
-  if (slideIndex === 1) {
-    prev.classList.add("hidden");
-  } else {
-    prev.classList.remove("hidden");
-  }
-  if (slideIndex === slides.length) {
-    next.classList.add("hidden");
-  } else {
-    next.classList.remove("hidden");
-  }
+  dots[slideIndex].className += " active";
+  prev.classList.toggle("hidden", slideIndex === 0);
+  next.classList.toggle("hidden", slideIndex === totalSlides - 1);
 }
 
-// auto-play like Apple
-setInterval(() => { 
-  if (slideIndex < document.getElementsByClassName("slide").length) {
-    plusSlides(1);
-  } else {
-    slideIndex = 1;
-    showSlides(slideIndex);
-  }
-}, 5000);
+function plusSlides(n) {
+  slideIndex = Math.max(0, Math.min(totalSlides - 1, slideIndex + n));
+  updateSlides();
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  updateSlides();
+}
+
+// init
+updateSlides();
 </script>
 {% endraw %}
 ---
