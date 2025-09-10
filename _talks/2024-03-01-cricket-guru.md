@@ -9,72 +9,64 @@ location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
 ---
 
-<!-- 📸 Slideshow -->
-<div class="slideshow-container">
+<!-- 📸 CSS-only slideshow -->
+<div class="slider">
+  <input type="radio" name="slide" id="s1" checked>
+  <input type="radio" name="slide" id="s2">
 
-  <div class="mySlides fade">
-    <img src="/images/talks-slide1.jpg" alt="Cricket Guru Presentation 1">
+  <div class="slides">
+    <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
   </div>
 
-  <div class="mySlides fade">
-    <img src="/images/talks-slide2.jpg" alt="Cricket Guru Presentation 2">
-  </div>
-
-  <!-- Dots -->
-  <div style="text-align:center; margin-top:10px;">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
+  <div class="nav">
+    <label for="s1" class="bar"></label>
+    <label for="s2" class="bar"></label>
   </div>
 </div>
 
 <style>
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
+.slider {
+  width: 100%;
+  max-width: 800px;
   margin: auto;
+  position: relative;
 }
-.mySlides {display: none;}
-.mySlides img {
+.slides {
+  display: flex;
+  width: 200%;
+  transition: 0.6s;
+}
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+.slide img {
   width: 100%;
   max-height: 500px;
   object-fit: cover;
 }
-.dot {
+input[type=radio] {display: none;}
+#s1:checked ~ .slides {transform: translateX(0);}
+#s2:checked ~ .slides {transform: translateX(-100%);}
+.nav {
+  text-align: center;
+  margin-top: 10px;
+}
+.bar {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  margin: 5px;
+  background: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
 }
-.active {background-color: #717171;}
-.fade {animation-name: fade; animation-duration: 1.5s;}
-@keyframes fade {from {opacity: .4} to {opacity: 1}}
+input#s1:checked ~ .nav label[for=s1],
+input#s2:checked ~ .nav label[for=s2] {
+  background: #717171;
+}
 </style>
-
-{% raw %}<script>
-let slideIndex = 0;
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 4000); // Change every 4s
-}
-document.addEventListener("DOMContentLoaded", showSlides);
-</script>{% endraw %}
-
 ---
 
 ## The Challenge  
