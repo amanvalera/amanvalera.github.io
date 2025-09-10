@@ -40,7 +40,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 }
 .slides {
   display: flex;
-  width: 200%; /* 2 slides */
+  width: 200%; /* for 2 slides */
   height: 100%;
   transition: transform 0.6s ease;
 }
@@ -71,6 +71,8 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
   justify-content: center;
   color: white;
   font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;   /* 🔑 no underline */
   border-radius: 50%;
   background: rgba(0,0,0,0.4);
   transition: background 0.3s, opacity 0.4s;
@@ -113,8 +115,7 @@ const next = document.querySelector(".next");
 function updateSlides() {
   slides.style.transform = `translateX(-${slideIndex * 100}%)`;
   for (let i = 0; i < dots.length; i++) {
-    dots[i]
-      .className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
   dots[slideIndex].className += " active";
   prev.classList.toggle("hidden", slideIndex === 0);
