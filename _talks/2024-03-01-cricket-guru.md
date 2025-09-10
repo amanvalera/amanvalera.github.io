@@ -12,8 +12,8 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 <!-- 📸 Simple manual slider -->
 <div class="slider-wrapper">
   <div class="slides">
-    <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
+    <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="/images/talks-slide1.jpg" alt="Slide 2"></div>
   </div>
 
   <!-- arrows -->
