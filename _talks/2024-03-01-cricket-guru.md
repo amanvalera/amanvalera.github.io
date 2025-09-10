@@ -9,7 +9,7 @@ location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
 ---
 
-<!-- 📸 Simple image slider using radio buttons -->
+<!-- 📸 Slideshow -->
 <div class="slideshow-container">
 
   <div class="mySlides fade">
@@ -20,7 +20,8 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
     <img src="/images/talks-slide2.jpg" alt="Cricket Guru Presentation 2">
   </div>
 
-  <div style="text-align:center">
+  <!-- Dots -->
+  <div style="text-align:center; margin-top:10px;">
     <span class="dot"></span> 
     <span class="dot"></span> 
   </div>
@@ -53,8 +54,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 @keyframes fade {from {opacity: .4} to {opacity: 1}}
 </style>
 
-{% raw %}
-<script>
+{% raw %}<script>
 let slideIndex = 0;
 function showSlides() {
   let i;
@@ -73,9 +73,7 @@ function showSlides() {
   setTimeout(showSlides, 4000); // Change every 4s
 }
 document.addEventListener("DOMContentLoaded", showSlides);
-</script>
-{% endraw %}
-
+</script>{% endraw %}
 
 ---
 
