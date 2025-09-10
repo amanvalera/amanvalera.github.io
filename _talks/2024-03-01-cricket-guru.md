@@ -9,7 +9,7 @@ location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
 ---
 
-<!-- 📸 Contained slideshow -->
+<!-- 📸 Slideshow -->
 <div class="slider-wrapper">
   <div class="slider">
     <input type="radio" name="slide" id="s1" checked>
@@ -20,6 +20,7 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
       <div class="slide"><img src="/images/talks-slide2.jpg" alt="Slide 2"></div>
     </div>
 
+    <!-- dots -->
     <div class="nav">
       <label for="s1" class="bar"></label>
       <label for="s2" class="bar"></label>
@@ -30,43 +31,43 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 <style>
 .slider-wrapper {
   max-width: 800px;
-  height: 450px;         /* 🔑 container height controls everything */
+  height: 450px;
   margin: 2rem auto;
   border-radius: 12px;
-  overflow: hidden;      /* clip corners + image overflow */
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   background: #000;
 }
 .slider {
   width: 100%;
-  height: 100%;          /* match container */
+  height: 100%;
   position: relative;
 }
 .slides {
   display: flex;
-  width: 200%;
-  height: 100%;          /* inherit container height */
-  transition: 0.6s;
+  width: 200%;   /* 2 slides */
+  height: 100%;
+  transition: transform 0.6s ease;
 }
 .slide {
   width: 100%;
-  height: 100%;          /* enforce height */
+  height: 100%;
   flex-shrink: 0;
 }
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;  /* show full image, even if black bars */
+  object-fit: cover;   /* fill container, crop edges */
   display: block;
-  background: #000;     /* optional: black letterbox background */
 }
 input[type=radio] {display: none;}
 #s1:checked ~ .slides {transform: translateX(0);}
 #s2:checked ~ .slides {transform: translateX(-100%);}
 .nav {
   text-align: center;
-  padding: 10px;
-  background: #222;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 }
 .bar {
   cursor: pointer;
@@ -82,8 +83,8 @@ input[type=radio] {display: none;}
 #s2:checked ~ .nav label[for=s2] {
   background: #717171;
 }
-
 </style>
+
 ---
 
 ## The Challenge  
