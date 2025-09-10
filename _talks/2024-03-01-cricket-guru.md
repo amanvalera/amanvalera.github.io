@@ -29,30 +29,34 @@ excerpt: "Machine learning project showcased at Heriot-Watt University to predic
 
 <style>
 .slider-wrapper {
-  max-width: 800px;       /* contain width */
-  margin: 2rem auto;      /* center on page */
+  max-width: 800px;
+  height: 450px;         /* 🔑 container height controls everything */
+  margin: 2rem auto;
   border-radius: 12px;
-  overflow: hidden;       /* clip corners */
+  overflow: hidden;      /* clip corners + image overflow */
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   background: #000;
 }
 .slider {
   width: 100%;
+  height: 100%;          /* match container */
   position: relative;
 }
 .slides {
   display: flex;
   width: 200%;
+  height: 100%;          /* inherit container height */
   transition: 0.6s;
 }
 .slide {
   width: 100%;
+  height: 100%;          /* enforce height */
   flex-shrink: 0;
 }
 .slide img {
-  width: 100%;       /* responsive width */
-  height: auto;      /* dynamic height */
-  object-fit: contain; /* fit inside without cropping */
+  width: 100%;
+  height: 100%;          /* 🔑 force image to fill box */
+  object-fit: cover;     /* crop edges but keep aspect */
   display: block;
 }
 input[type=radio] {display: none;}
@@ -77,6 +81,7 @@ input[type=radio] {display: none;}
 #s2:checked ~ .nav label[for=s2] {
   background: #717171;
 }
+
 </style>
 ---
 
