@@ -31,7 +31,7 @@
         </div>
       {% endif %}
 
-      <!-- Meta (title + date + venue only) -->
+      <!-- Meta + description (desktop inline) -->
       <div class="archive__item-meta">
         <h2 class="archive__item-title" itemprop="headline">
           {% if post.link %}
@@ -49,21 +49,18 @@
         {% if post.venue %}
           <p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
         {% endif %}
+
+        {% if post.excerpt %}
+          <p class="archive__item-excerpt excerpt-inline">{{ post.excerpt | markdownify }}</p>
+        {% endif %}
       </div>
     </div>
-
-    <!-- ✅ Description always below -->
-    {% if post.excerpt %}
-      <div class="archive__item-description">
-        <p class="archive__item-excerpt">{{ post.excerpt | markdownify }}</p>
-      </div>
-    {% endif %}
 
   </article>
 </div>
 
 <style>
-/* Flex layout for desktop + mobile */
+/* Flex layout */
 .archive__item-flex {
   display: flex;
   align-items: flex-start;
@@ -83,40 +80,37 @@
   display: block;
 }
 
-/* Meta */
+/* Meta + description */
 .archive__item-meta {
   flex: 0 0 70%;
 }
-
-/* Title */
 .archive__item-title {
   margin: 0 0 0.4rem 0;
   font-size: 1.2rem;
   line-height: 1.3;
 }
-
-/* Description full width below */
-.archive__item-description {
-  margin-top: 0.8rem;
+.excerpt-inline {
+  margin-top: 0.6rem;
 }
 
-/* Mobile tweaks */
+/* Mobile: keep 30/70 layout, but move description below full width */
 @media (max-width: 768px) {
   .archive__item-flex {
-    display: flex;         /* ✅ Keep side-by-side */
+    flex-wrap: wrap;
   }
   .archive__item-teaser {
     flex: 0 0 30%;
+    max-width: 30%;
   }
   .archive__item-meta {
     flex: 0 0 70%;
   }
-  .archive__item-description {
-    width: 100%;
-    margin-top: 1rem;
-  }
   .archive__item-title {
     font-size: 1.05rem;
+  }
+  .archive__item-meta .excerpt-inline {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 </style>
