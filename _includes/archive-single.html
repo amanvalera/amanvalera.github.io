@@ -17,7 +17,7 @@
 
     <div class="archive__item-flex">
 
-      <!-- Image / Teaser -->
+      <!-- Image -->
       {% if teaser %}
         <div class="archive__item-teaser">
           <a href="{{ base_path }}{{ post.url }}" rel="permalink">
@@ -58,11 +58,15 @@
 
         {% elsif post.collection == 'publications' %}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</p>
+
         {% elsif post.date %}
-          <p class="page__date">
-            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
-            {{ post.date | date: "%B %d, %Y" }}
+          <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i>
+            {{ post.date | date: '%B %d, %Y' }}
           </p>
+        {% endif %}
+
+        {% if post.venue and post.collection == 'talks' %}
+          <p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
         {% endif %}
 
         {% if post.excerpt %}
