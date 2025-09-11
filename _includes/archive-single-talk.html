@@ -15,7 +15,6 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
 
-    <!-- ✅ Flex wrapper -->
     <div class="archive__item-flex">
 
       <!-- Image -->
@@ -33,7 +32,7 @@
         </div>
       {% endif %}
 
-      <!-- Title + date + venue (NO description here) -->
+      <!-- Meta (title, date, venue, description) -->
       <div class="archive__item-meta">
         <h2 class="archive__item-title" itemprop="headline">
           {% if post.link %}
@@ -54,13 +53,12 @@
         {% if post.venue %}
           <p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
         {% endif %}
+
+        {% if post.excerpt %}
+          <p class="archive__item-excerpt archive__item-description">{{ post.excerpt | markdownify }}</p>
+        {% endif %}
       </div>
     </div>
-
-    <!-- ✅ Description OUTSIDE flex so it can span full width on mobile -->
-    {% if post.excerpt %}
-      <p class="archive__item-excerpt archive__item-description">{{ post.excerpt | markdownify }}</p>
-    {% endif %}
 
   </article>
 </div>
@@ -100,27 +98,27 @@
   line-height: 1.3;
 }
 
-/* Description (outside flex) */
+/* Description */
 .archive__item-description {
+  margin-top: 0.5rem;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .archive__item-flex {
-    flex-wrap: nowrap; /* image + meta still side by side */
+    flex-wrap: wrap; /* stack image + meta */
   }
   .archive__item-teaser {
-    flex: 0 0 30%;
-    max-width: 30%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   .archive__item-meta {
-    flex: 0 0 70%;
-    max-width: 70%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
   .archive__item-title {
     font-size: 1.05rem;
   }
-  /* Description spans full width below */
   .archive__item-description {
     flex-basis: 100%;
     max-width: 100%;
