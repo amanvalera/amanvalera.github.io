@@ -1,9 +1,9 @@
 ---
 title: "Cricket Guru – IPL Match Outcome Prediction"
 collection: talks
-type: "Student Showcase Presentation"
+type: "Student Showcase 2024"
 permalink: /talks/2024-03-01-cricket-guru
-venue: "Heriot-Watt University Student Showcase 2024"
+venue: "Heriot-Watt University"
 date: 2024-05-03
 location: "Edinburgh, UK"
 excerpt: "Machine learning project showcased at Heriot-Watt University to predict IPL match outcomes in real-time using ball-by-ball data, feature engineering, and a Streamlit app."
