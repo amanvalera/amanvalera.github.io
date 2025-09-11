@@ -15,52 +15,41 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
 
-    <!-- ✅ Flex wrapper -->
-    <div class="archive__item-flex">
-
-      <!-- Image -->
+    <div class="archive__item-row">
       {% if teaser %}
         <div class="archive__item-teaser">
-          <img src=
-            {% if teaser contains "://" %}
-              "{{ teaser }}"
-            {% else %}
-              "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-            {% endif %}
-            alt="">
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">
+            <img src=
+              {% if teaser contains "://" %}
+                "{{ teaser }}"
+              {% else %}
+                "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+              {% endif %}
+              alt="">
+          </a>
         </div>
       {% endif %}
 
-      <!-- Meta + description (desktop inline) -->
-      <div class="archive__item-meta">
+      <div class="archive__item-text">
         <h2 class="archive__item-title" itemprop="headline">
           {% if post.link %}
             <a href="{{ post.link }}">{{ title }}</a>
-            <a href="{{ base_path }}{{ post.url }}" rel="permalink">
-              <i class="fa fa-link" aria-hidden="true" title="permalink"></i>
-              <span class="sr-only">Permalink</span>
-            </a>
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link"></i><span class="sr-only">Permalink</span></a>
           {% else %}
             <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
           {% endif %}
         </h2>
 
         {% if post.date %}
-          <p class="page__meta">
-            <i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}
-          </p>
+          <p class="page__meta"><i class="fa fa-clock"></i> {{ post.date | date: '%B %d, %Y' }}</p>
         {% endif %}
 
         {% if post.venue %}
-          <p class="archive__item-excerpt">
-            {{ post.type }}, {{ post.venue }}, {{ post.location }}
-          </p>
+          <p class="archive__item-meta">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
         {% endif %}
 
         {% if post.excerpt %}
-          <p class="archive__item-excerpt excerpt-inline">
-            {{ post.excerpt | markdownify }}
-          </p>
+          <p class="archive__item-excerpt description">{{ post.excerpt | markdownify }}</p>
         {% endif %}
       </div>
     </div>
@@ -69,59 +58,55 @@
 </div>
 
 <style>
-/* Flex layout */
-.archive__item-flex {
+/* Row layout */
+.archive__item-row {
   display: flex;
-  align-items: center;   /* center meta vertically with image */
   gap: 1rem;
-  margin: 1rem 0;
+  align-items: flex-start; /* text aligns from top */
 }
 
-/* Image */
+/* Image (30%) */
 .archive__item-teaser {
   flex: 0 0 30%;
 }
 .archive__item-teaser img {
   width: 100%;
-  height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.archive__item-teaser img:hover {
+  transform: scale(1.05);
 }
 
-/* Meta */
-.archive__item-meta {
+/* Text (70%) */
+.archive__item-text {
   flex: 0 0 70%;
 }
-.archive__item-title {
-  margin: 0 0 0.4rem 0;
-  font-size: 1.2rem;
-  line-height: 1.3;
-}
-.excerpt-inline {
-  margin-top: 0.6rem;
+
+/* Description default inline */
+.description {
+  margin-top: 0.5rem;
 }
 
-/* Mobile: keep 30/70 for image+meta, but drop description full width */
+/* --- Responsive (mobile) --- */
 @media (max-width: 768px) {
-  .archive__item-flex {
-    flex-wrap: wrap;
+  .archive__item-row {
+    flex-wrap: wrap; /* allow drop below */
   }
+
   .archive__item-teaser {
     flex: 0 0 30%;
-    max-width: 30%;
   }
-  .archive__item-meta {
+
+  .archive__item-text {
     flex: 0 0 70%;
-    max-width: 70%;
   }
-  .archive__item-title {
-    font-size: 1.05rem;
-  }
-  /* move description below full width */
-  .archive__item-meta .excerpt-inline {
+
+  /* Move description below full width */
+  .archive__item-text .description {
     flex-basis: 100%;
-    max-width: 100%;
+    width: 100%;
   }
 }
 </style>
