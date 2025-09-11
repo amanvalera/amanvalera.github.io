@@ -36,22 +36,31 @@
         <h2 class="archive__item-title" itemprop="headline">
           {% if post.link %}
             <a href="{{ post.link }}">{{ title }}</a>
-            <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink">
+              <i class="fa fa-link" aria-hidden="true" title="permalink"></i>
+              <span class="sr-only">Permalink</span>
+            </a>
           {% else %}
             <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
           {% endif %}
         </h2>
 
         {% if post.date %}
-          <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>
+          <p class="page__meta">
+            <i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}
+          </p>
         {% endif %}
 
         {% if post.venue %}
-          <p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
+          <p class="archive__item-excerpt">
+            {{ post.type }}, {{ post.venue }}, {{ post.location }}
+          </p>
         {% endif %}
 
         {% if post.excerpt %}
-          <p class="archive__item-excerpt excerpt-inline">{{ post.excerpt | markdownify }}</p>
+          <p class="archive__item-excerpt excerpt-inline">
+            {{ post.excerpt | markdownify }}
+          </p>
         {% endif %}
       </div>
     </div>
@@ -63,7 +72,7 @@
 /* Flex layout */
 .archive__item-flex {
   display: flex;
-  align-items: flex-start;
+  align-items: center;   /* center meta vertically with image */
   gap: 1rem;
   margin: 1rem 0;
 }
@@ -80,7 +89,7 @@
   display: block;
 }
 
-/* Meta + description */
+/* Meta */
 .archive__item-meta {
   flex: 0 0 70%;
 }
@@ -93,7 +102,7 @@
   margin-top: 0.6rem;
 }
 
-/* Mobile: keep 30/70 layout, but move description below full width */
+/* Mobile: keep 30/70 for image+meta, but drop description full width */
 @media (max-width: 768px) {
   .archive__item-flex {
     flex-wrap: wrap;
@@ -104,10 +113,12 @@
   }
   .archive__item-meta {
     flex: 0 0 70%;
+    max-width: 70%;
   }
   .archive__item-title {
     font-size: 1.05rem;
   }
+  /* move description below full width */
   .archive__item-meta .excerpt-inline {
     flex-basis: 100%;
     max-width: 100%;
