@@ -1,13 +1,14 @@
 ---
-title: "Business Data Analyst"
+title: "Data Analyst"
 collection: experience
-type: "Permanent Role"
-permalink: /experience/2022-business-data-analyst
+type: "Graduate Engineer Trainee"
+permalink: /experience/2020-data-analyst
 venue: "Orange Business Services, Business Intelligence & Data Analytics"
-date: 2022-09-01
+date: 2020-09-01
+end_date: 2022-09-01
 location: "Mumbai, India"
 header:
-  teaser: "orange-business-logo.png"   # place this logo in /images/
+  teaser: "orange-business-logo.jpg"
 ---
 
 **Business Data Analyst** (Sep 2022 – Dec 2022)  

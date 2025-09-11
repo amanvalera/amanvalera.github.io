@@ -4,10 +4,11 @@ collection: experience
 type: "Graduate Engineer Trainee"
 permalink: /experience/2020-data-analyst
 venue: "Orange Business Services, Business Intelligence & Data Analytics"
-date: 2020-09-01
+date: 2020-09-09
+end_date: 2020-09-01
 location: "Mumbai, India"
 header:
-  teaser: "orange-business-logo.png"   # reuse same logo
+  teaser: "orange-business-logo.jpg"
 ---
 
 **Data Analyst** (Sep 2020 – Sep 2022)  
