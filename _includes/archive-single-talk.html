@@ -17,6 +17,7 @@
 
     <!-- ✅ Flex wrapper -->
     <div class="archive__item-flex">
+
       <!-- Image -->
       {% if teaser %}
         <div class="archive__item-teaser">
@@ -30,49 +31,43 @@
         </div>
       {% endif %}
 
-      <!-- Meta + description wrapper -->
-      <div class="archive__item-content">
-        <div class="archive__item-meta">
-          <h2 class="archive__item-title" itemprop="headline">
-            {% if post.link %}
-              <a href="{{ post.link }}">{{ title }}</a>
-              <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-            {% else %}
-              <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-            {% endif %}
-          </h2>
-
-          {% if post.read_time %}
-            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+      <!-- Meta (title + date + venue only) -->
+      <div class="archive__item-meta">
+        <h2 class="archive__item-title" itemprop="headline">
+          {% if post.link %}
+            <a href="{{ post.link }}">{{ title }}</a>
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+          {% else %}
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
           {% endif %}
+        </h2>
 
-          {% if post.date %}
-            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>
-          {% endif %}
+        {% if post.date %}
+          <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ post.date | date: '%B %d, %Y' }}</p>
+        {% endif %}
 
-          {% if post.venue %}
-            <p class="archive__item-excerpt" itemprop="description">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
-          {% endif %}
-        </div>
-
-        <!-- Description (desktop inline, mobile below) -->
-        {% if post.excerpt %}
-          <div class="archive__item-description">
-            <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-          </div>
+        {% if post.venue %}
+          <p class="archive__item-excerpt">{{ post.type }}, {{ post.venue }}, {{ post.location }}</p>
         {% endif %}
       </div>
     </div>
+
+    <!-- ✅ Description always below -->
+    {% if post.excerpt %}
+      <div class="archive__item-description">
+        <p class="archive__item-excerpt">{{ post.excerpt | markdownify }}</p>
+      </div>
+    {% endif %}
 
   </article>
 </div>
 
 <style>
-/* Flex layout desktop */
+/* Flex layout for desktop + mobile */
 .archive__item-flex {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 1rem 0;
 }
 
@@ -88,49 +83,40 @@
   display: block;
 }
 
-/* Text block */
-.archive__item-content {
+/* Meta */
+.archive__item-meta {
   flex: 0 0 70%;
 }
 
 /* Title */
 .archive__item-title {
-  margin: 0.2rem 0 0.6rem 0;
-  font-size: 1.25rem;
+  margin: 0 0 0.4rem 0;
+  font-size: 1.2rem;
   line-height: 1.3;
 }
 
-/* Mobile layout */
+/* Description full width below */
+.archive__item-description {
+  margin-top: 0.8rem;
+}
+
+/* Mobile tweaks */
 @media (max-width: 768px) {
   .archive__item-flex {
-    display: block;
+    display: flex;         /* ✅ Keep side-by-side */
   }
-
-  .archive__item-teaser,
-  .archive__item-meta {
-    display: inline-block;
-    vertical-align: top;
-  }
-
   .archive__item-teaser {
-    width: 30%;
+    flex: 0 0 30%;
   }
-
   .archive__item-meta {
-    width: 68%;
-    margin-left: 2%;
+    flex: 0 0 70%;
   }
-
-  /* Description full width below */
   .archive__item-description {
-    display: block;
-    margin-top: 0.8rem;
     width: 100%;
+    margin-top: 1rem;
   }
-
   .archive__item-title {
-    font-size: 1.1rem;
-    margin-top: 0.2rem;
+    font-size: 1.05rem;
   }
 }
 </style>
