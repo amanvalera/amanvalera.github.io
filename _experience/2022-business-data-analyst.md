@@ -8,7 +8,7 @@ date: 2020-09-01
 location: "Mumbai, India"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+This is a description of a experience. You can use markdown like any other post.
 
 Heading 1
 ======
