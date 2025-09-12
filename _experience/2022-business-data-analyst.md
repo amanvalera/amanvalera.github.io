@@ -8,7 +8,7 @@ date: 2022-09-01
 end_date: 2022-12-24
 location: "Mumbai, India"
 header:
-  teaser: "orange-business-logo.png"   # place this logo in /images/
+  teaser: "orange-business-logo.jpg"   # place this logo in /images/
 ---
 
 Deliver end-to-end BI from data sources to dashboards for operations and hiring.  
