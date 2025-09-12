@@ -21,6 +21,6 @@ Promoted Tinder on campus and through social media to increase brand visibility 
 
 ### Impact  
 - Expanded Tinder’s reach within student communities in Mumbai.  
-- Supported event participation and campaign engagement on campus and online.  
+- Supported event participation and campaign engagement on campus and online platforms.  
 
 **Technologies:** Social Media, Event Marketing
