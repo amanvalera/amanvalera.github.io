@@ -27,6 +27,6 @@ Build ETL workflows and reporting to replace manual reporting and track KPIs.
 - KPI sets available for Monthly Business Reviews; coverage across EEMEA processes.  
 
 ### Technologies  
-SQL Server · Power BI · SQL Agent Jobs · SSIS · Excel · SharePoint  
+- SQL Server - Power BI - SQL Agent Jobs - SSIS - Excel - SharePoint  
 
 **Technologies used:** SQL Server, Power BI, SSMS, Python, Excel  
