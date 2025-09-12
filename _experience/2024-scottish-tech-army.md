@@ -10,11 +10,17 @@ header:
   teaser: "scottish-tech-army-logo.jpg"   # add logo in /images/
 ---
 
-**Data Volunteer** (Mar 2021 – Dec 2021)  
-Scottish Tech Army  
+Delivered dashboards for charities to track survey feedback and manage access for multiple stakeholders.  
 
-- Supported charities and public health/community service organizations with **data-driven decision-making**.  
-- Built dashboards and internal/external reporting views for **The Fore**, analyzing employee feedback using **Looker Studio**.  
-- Collaborated with stakeholders to gather requirements and ensure data solutions matched organizational needs.  
+### Core Responsibilities  
+- Built dashboards in Looker Studio for charities to view volunteer feedback data.  
+- Implemented access control using Google Sheets to manage permissions across organisations.  
+- Recreated dashboards using live data feeds and centralised survey results.  
+- Supported The Fore with requirements for a future dashboard to aggregate metrics across charities.  
+- Produced documentation for dashboard maintenance and access management.  
+
+### Impact  
+- Charities gained real-time visibility into volunteer feedback through Looker Studio dashboards.  
+- Access management allowed multiple organisations to use the same infrastructure securely.  
 
 **Technologies used:** Looker Studio, Excel, Google Sheets  
