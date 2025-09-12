@@ -24,4 +24,4 @@ Deliver end-to-end BI from data sources to dashboards for operations and hiring.
 - Workforce scenario simulation available to hiring managers via DirectQuery dashboards.  
 - Unit-price trend analysis delivered for account actions.  
 
-**Technologies used:** SQL Server, MDX, SSIS, Power BI, DAX, Python, Excel  
+**Technologies:** SQL Server, MDX, SSIS, Power BI, DAX, Python, Excel  
