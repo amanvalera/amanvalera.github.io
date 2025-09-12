@@ -11,9 +11,6 @@ header:
   teaser: "orange-business-logo.jpg"
 ---
 
-**Data Analyst** (Sep 2020 – Sep 2022)  
-Orange Business Services — Business Intelligence & Data Analytics  
-
 - Developed **ETL workflows** and validated dashboard consistency for reporting. Proposed and implemented a fully automated solution replacing manual weekly/monthly reporting of billable hours, saving 90% of manual work.  
 - Built ETL pipelines, deployed SQL Agent Jobs, and delivered **Power BI dashboards** ensuring data quality and reducing errors.  
 - Maintained reporting systems for NAM KPIs used in Monthly Business Reviews (MBR). Designed BI solutions to analyze processes across PM, TM, CSM, SM, and EEMEA region.  
