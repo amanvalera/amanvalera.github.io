@@ -23,4 +23,4 @@ Delivered dashboards for charities to track survey feedback and manage access fo
 - Charities gained real-time visibility into volunteer feedback through Looker Studio dashboards.  
 - Access management allowed multiple organisations to use the same infrastructure securely.  
 
-**Technologies used:** Looker Studio, Excel, Google Sheets  
+**Technologies:** Looker Studio, Excel, Google Sheets  
