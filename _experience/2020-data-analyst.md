@@ -11,10 +11,22 @@ header:
   teaser: "orange-business-logo.jpg"
 ---
 
-- Developed **ETL workflows** and validated dashboard consistency for reporting. Proposed and implemented a fully automated solution replacing manual weekly/monthly reporting of billable hours, saving 90% of manual work.  
-- Built ETL pipelines, deployed SQL Agent Jobs, and delivered **Power BI dashboards** ensuring data quality and reducing errors.  
-- Maintained reporting systems for NAM KPIs used in Monthly Business Reviews (MBR). Designed BI solutions to analyze processes across PM, TM, CSM, SM, and EEMEA region.  
-- Investigated data discrepancies, pipeline issues, and SQL query bugs; authored over 15 process documents including BAU guides and technical specs.  
-- Collaborated with stakeholders and cross-functional teams, translating business requirements into technical specifications for BI solutions.  
+Build ETL workflows and reporting to replace manual reporting and track KPIs.  
+
+### Core Responsibilities  
+- Developed ETL workflows and validated dashboard outputs for reporting.  
+- Replaced weekly and monthly billable-hours reporting with an automated pipeline; built ETL; deployed SQL Agent Jobs; created Power BI visuals.  
+- Created and maintained reporting for NAM KPIs used in Monthly Business Reviews.  
+- Analysed dashboard usage and consolidated reports; delivered BI for PM, TM, CSM, SM and other processes across EEMEA.  
+- Investigated data discrepancies and change requests; backtracked ETLs; debugged SQL.  
+- Wrote 15+ process documents (user guides, BAU docs, technical specs).  
+- Gathered requirements with stakeholders and translated to BI specifications.  
+
+### Impact  
+- 90% reduction in manual reporting time for billable-hours process.  
+- KPI sets available for Monthly Business Reviews; coverage across EEMEA processes.  
+
+### Technologies  
+SQL Server · Power BI · SQL Agent Jobs · SSIS · Excel · SharePoint  
 
 **Technologies used:** SQL Server, Power BI, SSMS, Python, Excel  
