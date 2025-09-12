@@ -26,7 +26,4 @@ Build ETL workflows and reporting to replace manual reporting and track KPIs.
 - 90% reduction in manual reporting time for billable-hours process.  
 - KPI sets available for Monthly Business Reviews; coverage across EEMEA processes.  
 
-### Technologies  
-- SQL Server - Power BI - SQL Agent Jobs - SSIS - Excel - SharePoint  
-
-**Technologies used:** SQL Server, Power BI, SSMS, Python, Excel  
+**Technologies:** SQL Server, MDX, Power BI, DAX, SSMS, Python, Excel  
