@@ -11,7 +11,7 @@ header:
   teaser: "orange-business-logo.jpg"
 ---
 
-Build ETL workflows and reporting to replace manual reporting and track KPIs.  
+Built ETL workflows and reporting to replace manual reporting and track KPIs.  
 
 ### Core Responsibilities  
 - Developed ETL workflows and validated dashboard outputs for reporting.  
